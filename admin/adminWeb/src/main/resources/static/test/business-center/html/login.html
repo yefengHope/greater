@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+    <title></title>
+</head>
+<body>
+    <!--头部 start-->
+    <div class="login-head">
+        <div class="login-head-cont">
+            <a href="javascript:void(0);">
+                <div class="logo"></div>
+                <div class="logo-info">
+                    <h1>小顶网商户中心</h1>
+                    <p>让商业更便捷 让创业更简单</p>
+                </div>
+                <div class="clear"></div>
+            </a>
+        </div>
+    </div>
+    <!--头部 end-->
+    <!--内容 start-->
+    <div class="login-cont">
+        <div class="login-banner">
+            <div class="login-box">
+                <div class="login-box-tab">
+                    <ul class="type-tit">
+                        <li><a href="javascript:void(0);">我是商户</a></li>
+                        <li><a href="javascript:void(0);">我是顾问</a></li>
+                    </ul>
+                    <div class="type-main">
+                        <div>
+                            <form action="" class="login-form">
+                                <div class="input-piece user">
+                                    <span class="iconfont ib"></span>
+                                    <input class="focus-change" type="text" placeholder="登录账号／手机号码"/>
+                                </div>
+                                <div class="input-piece password">
+                                    <span class="iconfont ib"></span>
+                                    <input class="focus-change" type="password" placeholder="密码"/>
+                                </div>
+                                <div class="verification-code">
+                                    <input class="blue-border-focus" type="text" placeholder="验证码"/>
+                                    <div class="verification-img">
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <a href="javascript:void(0);" class="login-btn btnh">登 录</a>
+                                <div class="login-error-prompt iconfont open">请输入账户和密码</div>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="" class="login-form">
+                                <div class="input-piece user">
+                                    <span class="iconfont ib"></span>
+                                    <input class="focus-change" type="text" placeholder="登录账号／手机号码"/>
+                                </div>
+                                <div class="input-piece password">
+                                    <span class="iconfont ib"></span>
+                                    <input class="focus-change" type="password" placeholder="密码"/>
+                                </div>
+                                <div class="verification-code">
+                                    <input class="blue-border-focus" type="text" placeholder="验证码"/>
+                                    <div class="verification-img">
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <a href="javascript:void(0);" class="login-btn btnh">登 录</a>
+                                <div class="login-error-prompt iconfont open">请输入账户和密码</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-prompt">
+                    <p class="phone-num">合作热线 400-005-5002</p>
+                    <a href="javascript:void(0);" class="not-login" onclick="whitepop('无法登录','#canNotLogin')">无法登录</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--内容 end-->
+    <!--底部 start-->
+    <div class="login-footer">
+        <p>Copyright 1996-2016 xiaodingwang.com 北京顶呱呱企业管理有限公司 版权所有</p>
+        <p>京公网安备:11010502031545号 | 京ICP备16006021号-1 | 营业执照 | 投诉与举报电话：18601</p>
+    </div>
+    <!--底部 end-->
+    <!--无法登录 start-->
+    <div class="business-layer-main" id="canNotLogin">
+        <div class="can-not-login open">
+            <p>我们提供两种方式帮助您重新登录</p>
+            <div class="login-again">
+                <a href="javascript:void(0);" class="for-phone btnh ib">通过手机号码登录</a>
+                <a href="javascript:void(0);" class="for-reset btnh ib">重设密码</a>
+            </div>
+        </div>
+        <!--通过手机号码登录-->
+        <div class="login-for-phone">
+            <div class="input-piece phone">
+                <span class="iconfont ib"></span>
+                <input class="focus-change" type="text" placeholder="请输入手机号"/>
+            </div>
+            <div class="input-piece validate">
+                <span class="iconfont ib"></span>
+                <input class="focus-change" type="text" placeholder="请输入收到的验证码"/>
+                <a href="javascript:void(0);" class="give-validate">获取验证码</a>
+            </div>
+            <a href="javascript:void(0);" class="login-btn btnh">登 录</a>
+            <div class="login-error-prompt iconfont open">请输入账户和密码</div>
+        </div>
+        <!--重设密码-->
+        <div class="reset-password">
+            <div class="input-piece phone">
+                <span class="iconfont ib"></span>
+                <input class="focus-change" type="text" placeholder="请输入手机号"/>
+            </div>
+            <div class="input-piece validate">
+                <span class="iconfont ib"></span>
+                <input class="focus-change" type="text" placeholder="请输入收到的验证码"/>
+                <a href="javascript:void(0);" class="give-validate">获取验证码</a>
+            </div>
+            <div class="input-piece password">
+                <span class="iconfont ib"></span>
+                <input class="focus-change" type="password" placeholder="请输入新密码"/>
+                <a href="javascript:void(0);" class="iconfont password-visual"></a>
+            </div>
+            <a href="javascript:void(0);" class="login-btn btnh">确定重设</a>
+            <div class="login-error-prompt iconfont open">请输入账户和密码</div>
+        </div>
+    </div>
+    <!--无法登录 end-->
+
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../js/global/frame.js"></script>
+<script>
+
+    $(function(){
+//无法登陆弹窗内容切换
+        $(".not-login").click(function(){
+            function bkVague(){
+                //选择document.body下所有非.shade class的第一级元素
+                var others = document.querySelectorAll('body > *:not(.layui-layer-page)');
+                //遍历nodeList, 如果该元素不是script, 则给该元素添加滤镜
+                [].forEach.call(others, function(elem){
+                    if(elem.nodeName != 'SCRIPT'){
+                        elem.style.webkitFilter = 'blur(10px)';
+                    }
+                });
+            }
+            function removeBkVague(){
+                var others = document.querySelectorAll('body > *');
+                [].forEach.call(others, function(elem){
+                    if(elem.nodeName != 'SCRIPT'){
+                        //去除模糊效果
+                        elem.style.webkitFilter = '';
+                    }
+                });
+            }
+            bkVague();
+            $("#canNotLogin .for-phone").click(function(){
+                $("#canNotLogin>.open").removeClass("open");
+                $(this).parents(".layui-layer-page").find(".layui-layer-title").text("通过手机号码登录");
+                $("#canNotLogin>.login-for-phone").addClass("open");
+            });
+            $("#canNotLogin .for-reset").click(function(){
+                $("#canNotLogin>.open").removeClass("open");
+                $(this).parents(".layui-layer-page").find(".layui-layer-title").text("重设密码");
+                $("#canNotLogin>.reset-password").addClass("open");
+            });
+            $(".layui-layer-page").find(".layui-layer-close").click(function(){
+                removeBkVague();
+                $("#canNotLogin>.open").removeClass("open");
+                $("#canNotLogin>.reset-password").parents(".layui-layer-page").find(".layui-layer-title").text("无法登录");
+                $("#canNotLogin>.can-not-login").addClass("open");
+            })
+        });
+//tab切换
+        $('.login-box-tab').myTab({
+            content:'.type-main',
+            tabTitle:'.type-tit'
+        });
+//获取验证码
+        $(".login-for-phone .give-validate").click(function(){
+            giveValidate(this);
+        });
+        $(".reset-password .give-validate").click(function(){
+            giveValidate(this);
+        });
+        function giveValidate(that){
+            if($(that).text() == "获取验证码"){
+                $(that).html("<span>120</span>秒后重新获取");
+                var validateTime = 120;
+                var validateControl = setInterval(function(){
+                    validateTime = --validateTime;
+                    $(that).children("span").text(validateTime);
+                    if(validateTime == 0){
+                        clearInterval(validateControl);
+                        $(that).html("获取验证码");
+                    }
+                    $(that).parents(".layui-layer-page").find(".layui-layer-close").click(function(){
+                        clearInterval(validateControl);
+                        $(that).html("获取验证码");
+                    })
+                },1000);
+            }
+        }
+//密码可见按钮
+        $(".reset-password>.password .password-visual").click(function(){
+            if($(".reset-password>.password input").attr("type") == "password"){
+                $(".reset-password>.password input").attr("type","text");
+                $(".reset-password>.password").addClass("visual");
+            }else{
+                $(".reset-password>.password input").attr("type","password");
+                $(".reset-password>.password").removeClass("visual");
+            }
+        })
+    });
+</script>
+</body>
+</html>

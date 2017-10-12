@@ -1,0 +1,61 @@
+/*Author:yjc-2017.2.8*/
+/*内容：商品管理-商家-正在经营商品*/
+/*正在经营商品 start*/
+.operating-commodity{ padding: 17px 20px 10px 20px;}
+.operating-commodity>.tit{ font-size: 14px; color: #333; font-weight: 700;}
+.operating-commodity>.tit>span{ color: #999; font-weight: 400;}
+.operating-commodity>.prompt{ margin-top: 7px; }
+.form-box{ margin-top: 30px;}
+.form-box>ul{ font-size: 0;}
+.form-box>ul>li{ display: inline-block; margin: 0 30px 0 0;}
+.form-box>ul>li>.tit{ font-size: 14px; color: #333; line-height: 20px;}
+.form-box>ul>li>.handle{ margin-top: 6px; font-size: 0;}
+.form-box>ul>li>.handle>select{ width: 168px; height: 34px; margin-bottom: 20px; font-size: 14px; color: #aaa; border: 1px solid #dfe1eb; padding-left: 10px; display: inline-block; vertical-align: middle;}
+.form-box>ul>li>.handle>.link-line{ width: 10px; border-top: 1px solid #ccc; margin: 0 5px 20px 5px;}
+.form-box>ul>li>.handle>input{ width: 168px; height: 34px; padding: 9px 10px; margin-bottom: 20px; font-size: 14px; color: #333; line-height: 16px; vertical-align: middle; border: 1px solid #dfe1eb;}
+.form-box>ul>li>.search-btn{ width: 110px; height: 34px;font-size: 14px; color: #fff; line-height: 34px; background: #7b92eb; border-radius: 2px; text-align: center; margin-bottom:20px;}
+.form-box>ul>li>.handle>.active{ border-color: #bbbed0;}
+/*正在经营商品 end*/
+/*搜索内容 start*/
+.business-operating-batch{ font-size: 0; margin-bottom: 10px; padding-left: 10px;}
+.checkbox-piece{ font-size: 14px; color: #666; font-weight: 400;vertical-align: middle; cursor: pointer;}
+.checkbox-icon{ width: 22px; height: 22px; border: 1px solid #cdcfde; position: relative; margin-right: 2px;}
+.checkbox-piece.checked>.checkbox-icon:before{ position: absolute; top: 0; left: 2px; content:"\e64f"; font-size: 16px; color: #7b92eb; }
+.checkbox-piece.checked>.checkbox-icon{ border-color: #7b92eb; }
+.checkbox-piece>input{ display: none;}
+.business-operating-batch>.batch-operation{ font-size: 12px; min-width: 100px; text-align: center; color: #7b92eb; border: 1px solid #7b92eb; padding: 0 10px; line-height: 28px; height: 30px; border-radius: 2px; margin-left: 20px; }
+.business-operating-batch>.batch-operation:hover{ background: #7b92eb; color: #fff; }
+/*搜索内容 end*/
+.price-set-up{ font-size: 0; width: 150px; }
+.price-set-up>input{ width: 80px; height: 28px; padding: 0 10px; color: #ccc; line-height: 28px; border: 1px solid #e5e5e5; vertical-align: middle; font-size: 14px;}
+.price-set-up>.checkbox-piece{ vertical-align: middle; margin-left: 12px; color: #a9a9a9;}
+.price-set-up>.checkbox-piece>.checkbox-icon{ border-color: #7b92eb;}
+.price-set-up>.checkbox-piece.checked>.checkbox-icon{ background: #7b92eb;}
+.price-set-up>.checkbox-piece.checked>.checkbox-icon:before{ color: #fff;}
+.price-set-up>.checkbox-piece.checked{ color: #333;}
+.price-set-up>input.active{ border-color: #bbbed0; color: #333;}
+/*待确认商品页*/
+/*弹窗-确认发布*/
+.confirm-release .handle-box{ padding: 20px 0;}
+/*弹窗-批量解除关联顾问*/
+.batch-release .tit,.release-adviser .tit{ font-size: 14px; color: #333; margin: 36px 0 6px;}
+.batch-release .cancel-ensure-handle,.release-adviser .cancel-ensure-handle{ margin-top: 40px;}
+/*弹窗-新增／解除关联顾问*/
+.add-or-relieve .add-relieve-cont{ margin-top: 20px;}
+
+/*
+ * Author:ly
+ * Time:2017-02-10
+ * Content:顾问列表-正在经营的商品
+*/
+.nav_active{color: #004b92 !important;}
+#addOrRelieve1{width: 340px;}
+.business-layer-main .add-or-relieve1{width: 340px; min-width: 340px;text-align: center;}
+.tips_info{padding: 35px 0 5px 0;}
+.business-layer-main .tips_infoZone{font-size: 12px;display: inline-block;height: 28px;border: 1px solid #fbeade;margin: 0 auto;line-height: 28px;color: #fa4f4f;background: #fdf7f3;position: relative;padding-left: 25px;padding-right: 10px;}
+.business-layer-main .tips_infoZone i:after{content: "\e646";font-size: 18px;position: absolute;top: 1px;left: 7px;}
+.business-layer-main .sureBtn{margin-top: 40px;}
+.business-layer-main .sureBtnBtn{width: 110px;height: 34px;font-size: 14px;color: #fff;line-height: 34px;background: #7b92eb;border-radius: 2px;text-align: center;margin-bottom: 20px;outline: none;border: 1px solid #7b92eb;margin: 0 2px;}
+.business-layer-main .cancelBtn{background: #fff;color: #666;}
+.business-layer-main .sureBtnBtn:hover{filter: alpha(opacity=90);-moz-opacity: 0.9; -khtml-opacity: 0.9;opacity: 0.9;}
+

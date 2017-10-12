@@ -1,0 +1,83 @@
+/*about: yjc-2017.2.7*/
+/*内容：商家中心-登录页面*/
+/*头部 start*/
+.login-head{ width: 100%; min-width: 1180px; background: #fff;}
+.login-head-cont{ width: 1180px; margin: 0 auto;height: 160px;}
+.login-head-cont>a{ display: inline-block; padding-top: 40px;}
+.login-head-cont>a>.logo{ float: left; width: 78px; height: 90px; background: url("../images/login-logo.png") no-repeat;}
+.login-head-cont>a>.logo-info{ float: left;margin-left: 10px;}
+.login-head-cont>a>.logo-info>h1{ font-size: 36px; color: #004b92; font-weight: 700; margin-top: 14px;}
+.login-head-cont>a>.logo-info>p{ font-size: 20px; color: #000; margin-top: 4px;}
+/*头部 end*/
+/*内容 start*/
+.login-cont{ width: 100%; min-width: 1180px; overflow: hidden; position: relative;}
+.login-banner{ width: 1920px; height: 560px; background: #004b92; position: relative; left: 50%; margin-left: -960px;}
+.login-box{ position: absolute; top: 70px; left: 50%; margin-left: 220px; width: 370px; height: 420px; background: #fff;}
+.login-box-tab{ }
+.type-tit{ overflow: hidden;}
+.type-tit>li{ float: left; width: 50%;}
+.type-tit>li>a{ display: block; font-size: 18px; color: #666; line-height: 56px; vertical-align: middle; text-align: center; background: #f2f2f2;}
+.type-tit>.active>a{ background: #fff; color: #004b92; font-weight: 700;}
+.type-main{ padding: 0 20px; height: 284px; overflow: hidden;}
+.login-form{ padding-top: 30px; position: relative;}
+.login-form>.input-piece{ width: 100%; height: 46px; border: 1px solid #ccc; font-size: 0; margin-bottom: 20px;}
+.login-form>.input-piece.active{ border-color: #004b92;}
+.login-form>.input-piece>span{ width: 52px; height: 44px; background: #f2f2f2; position: relative;}
+.login-form>.input-piece>input{ font-size: 14px; width: 274px; padding: 15px 10px 15px 20px; height: 44px; line-height: 14px; vertical-align: middle; border: none;}
+.login-form>.input-piece>span:before{ font-size: 24px; color: #ccc; position: absolute; top: 5px; left: 14px; }
+.login-form>.user>span:before{ content:"\e602";  }
+.login-form>.password>span:before{ content:"\e603";}
+.verification-code>input{ float: left; font-size: 14px; width: 197px; padding: 15px 10px 15px 20px; height: 46px; line-height: 16px; vertical-align: middle; border: 1px solid #ccc;}
+.verification-code>input.active{ border-color: #004b92;}
+.verification-code>.verification-img{ float: right; width: 120px; height: 46px; overflow: hidden;}
+.verification-code>.verification-img>img{ width: 100%; height: 100%;}
+.login-form .login-btn{ display: block; width: 100%; height: 46px; margin-top: 30px; line-height: 46px; font-size: 16px; color: #fff; background: #004b92; vertical-align: middle; text-align: center; border-radius: 2px;}
+.login-prompt{ padding: 16px 20px 0;}
+.login-prompt .phone-num{ float: left; font-size: 14px; color: #999;}
+.login-prompt .not-login{ float: right;font-size: 14px; color: #509de7;}
+.login-prompt .not-login:hover{ color: #004b92;}
+/*内容 end*/
+/*底部 start*/
+.login-footer{ padding: 24px 0 20px 0;}
+.login-footer>p{ text-align: center; font-size: 12px; color: #999; line-height: 24px;}
+/*底部 end*/
+/*无法登录*/
+#canNotLogin>.open{ display: block;}
+.can-not-login{ display: none; padding: 46px 25px 26px; text-align: center; width: 330px;}
+.can-not-login>p{ font-size: 14px; color: #333;}
+.can-not-login>.login-again{ margin-top: 26px;}
+.can-not-login>.login-again>a{ width: 280px; height: 46px; color: #fff; font-size: 16px; line-height: 46px; vertical-align: middle; background: #004b92; border-radius: 2px; margin-bottom: 20px;}
+/*通过手机号码登录*/
+.login-for-phone{ display: none; padding: 30px 0 33px; position: relative;}
+.login-for-phone>.input-piece{ width: 330px; height: 46px; border: 1px solid #ccc; font-size: 0; margin-bottom: 20px;}
+.login-for-phone>.input-piece.active{ border-color: #004b92;}
+.login-for-phone>.input-piece>span{ width: 52px; height: 44px; background: #f2f2f2; position: relative;}
+.login-for-phone>.phone>input{ font-size: 14px; width: 274px; padding: 15px 10px 15px 20px; height: 44px; line-height: 14px; vertical-align: middle; border: none;}
+.login-for-phone>.validate>input{ font-size: 14px; width: 160px; padding: 15px 10px 15px 20px; height: 44px; line-height: 14px; vertical-align: middle; border: none;}
+.login-for-phone>.input-piece>span:before{ font-size: 24px; color: #ccc; position: absolute; top: 5px; left: 14px; }
+.login-for-phone>.phone>span:before{ content:"\e6f5";  }
+.login-for-phone>.validate{ position: relative;}
+.login-for-phone>.validate>span:before{ content:"\e603";}
+.login-for-phone>.input-piece>.give-validate{ position: absolute; right: 0; top: 0; width: 114px; height: 44px; font-size: 12px; color: #004b92; background: #e8f4ff; text-align: center; line-height: 44px; vertical-align: middle;}
+.login-for-phone .login-btn{ display: block; width: 100%; height: 46px; margin-top: 30px; line-height: 46px; font-size: 16px; color: #fff; background: #004b92; vertical-align: middle; text-align: center; border-radius: 2px;}
+/*重设密码*/
+.reset-password{ display: none; padding: 30px 0 33px; position: relative;}
+.reset-password>.input-piece{ position:relative; width: 330px; height: 46px; border: 1px solid #ccc; font-size: 0; margin-bottom: 20px;}
+.reset-password>.input-piece.active{ border-color: #004b92;}
+.reset-password>.input-piece>span{ width: 52px; height: 44px; background: #f2f2f2; position: relative;}
+.reset-password>.phone>input{ font-size: 14px; width: 274px; padding: 15px 10px 15px 20px; height: 44px; line-height: 14px; vertical-align: middle; border: none;}
+.reset-password>.password>input{ font-size: 14px; width: 274px; padding: 15px 10px 15px 20px; height: 44px; line-height: 14px; vertical-align: middle; border: none;}
+.reset-password>.validate>input{ font-size: 14px; width: 160px; padding: 15px 10px 15px 20px; height: 44px; line-height: 14px; vertical-align: middle; border: none;}
+.reset-password>.input-piece>span:before{ font-size: 24px; color: #ccc; position: absolute; top: 5px; left: 14px; }
+.reset-password>.phone>span:before{ content:"\e6f5";  }
+.reset-password>.password>span:before{ content:"\e603";  }
+.reset-password>.validate{ position: relative;}
+.reset-password>.validate>span:before{ content:"\e654";}
+.reset-password>.input-piece>.give-validate{ position: absolute; right: 0; top: 0; width: 114px; height: 44px; font-size: 12px; color: #004b92; background: #e8f4ff; text-align: center; line-height: 44px; vertical-align: middle;}
+.reset-password .login-btn{ display: block; width: 100%; height: 46px; margin-top: 30px; line-height: 46px; font-size: 16px; color: #fff; background: #004b92; vertical-align: middle; text-align: center;border-radius: 2px;}
+.reset-password>.password .password-visual:after{ content:"\e611"; position: absolute; right: 0; top: 4px; font-size: 20px; color: #ccc; padding: 5px 10px; cursor: pointer;}
+.reset-password>.visual .password-visual:after{ color: #004b92;}
+/*登陆错误提示*/
+.login-error-prompt{ display: none; position: absolute; top: 2px; left: 0; width: 330px; height: 26px; padding-top: 1px; background: #ffebeb; padding-left: 53px; line-height: 26px; vertical-align: middle; font-size: 14px; color: #fa4f4f; }
+.login-error-prompt:before{ content:"\e604"; position: absolute; left: 16px; top: 2px; font-size: 20px; color: #fa4f4f;}
+.login-error-prompt.open{ display: block;}

@@ -1,0 +1,20 @@
+[
+  {"id":1,"spuid":10001,"busName":"busName1","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":2,"spuid":10002,"busName":"busName2","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":3,"spuid":10003,"busName":"busName3","busType":"","opeAdviserPrice":2,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":4,"spuid":10004,"busName":"busName4","busType":"","opeAdviserPrice":2,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":5,"spuid":10005,"busName":"busName5","busType":"","opeAdviserPrice":2,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":6,"spuid":10006,"busName":"busName6","busType":"","opeAdviserPrice":2,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":7,"spuid":10007,"busName":"busName7","busType":"","opeAdviserPrice":2,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":8,"spuid":10008,"busName":"busName8","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":9,"spuid":10009,"busName":"busName9","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":10,"spuid":10010,"busName":"busName10","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":11,"spuid":10011,"busName":"busName11","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":12,"spuid":10012,"busName":"busName12","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":13,"spuid":10013,"busName":"busName13","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":14,"spuid":10014,"busName":"busName14","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":15,"spuid":10015,"busName":"busName15","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":16,"spuid":10016,"busName":"busName16","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":17,"spuid":10017,"busName":"busName17","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12},
+  {"id":18,"spuid":10018,"busName":"busName18","busType":"","opeAdviserPrice":1,"opePlatformPrice":220.01,"userPersonNum":12}
+]

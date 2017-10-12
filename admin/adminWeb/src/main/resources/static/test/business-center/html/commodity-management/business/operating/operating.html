@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="../../../../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/commodity-management/operating.css"/>
+    <title>商户-正在经营</title>
+</head>
+<body>
+<!--header start-->
+<div class="head">
+    <div class="head-box">
+        <h1 class="logo">
+            <a href="javascript:void(0);"></a>
+        </h1>
+        <div class="area">
+            <a href="javascript:void(0);">
+                <span>北京站</span>
+                <i class="iconfont triangle"></i>
+                <ul class="area-menu">
+                    <li>重庆站</li>
+                    <li>成都站</li>
+                    <li>深圳站</li>
+                </ul>
+            </a>
+        </div>
+        <div class="info-bar">
+            <a href="javascript:void(0);" class="user-info">
+                <div class="user-head">
+                    <img src="../../../../images/head.jpg" alt=""/>
+                </div>
+                <div class="user-data">
+                    <span class="name text-overflow">商家（第三方）</span>
+                    <span class="company text-overflow">成都风铃咨询有限公司</span>
+                </div>
+            </a>
+            <div class="nav">
+                <a href="javascript:void(0);" class="news"><i class="iconfont"></i><span>消息</span></a>
+                <a href="javascript:void(0);" class="quit"><i class="iconfont"></i><span>退出</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--header end-->
+<!--内容 start-->
+<div class="content-box">
+    <!--左边导航栏 start-->
+    <div class="cont-side">
+        <div class="menu-box">
+            <dl>
+                <dt><i class="iconfont mechanism"></i><span>商户管理</span></dt>
+                <dd><a href="javascript:void(0);" class="text-overflow">信息查看及修改</a></dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont commodity"></i><span>商品管理</span></dt>
+                <dd><a href="javascript:void(0);" class="text-overflow">待确认商品<span class="new-count ib">3</span></a></dd>
+                <dd><a href="javascript:void(0);" class="text-overflow active">正在经营商品</a></dd>
+                <dd><a href="javascript:void(0);" class="text-overflow">尚未经营商品</a></dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont adviser"></i><span>顾问管理</span></dt>
+                <dd><a href="javascript:void(0);" class="text-overflow">新增顾问</a></dd>
+                <dd><a href="javascript:void(0);" class="text-overflow">待开通顾问<span class="new-count ib">13</span></a></dd>
+                <dd><a href="javascript:void(0);" class="text-overflow">正常顾问</a></dd>
+                <dd><a href="javascript:void(0);" class="text-overflow">已锁定顾问</a></dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont order"></i><span>订单管理</span></dt>
+            </dl>
+            <dl>
+                <dt><i class="iconfont finance"></i><span>财务管理</span></dt>
+            </dl>
+            <dl>
+                <dt><i class="iconfont data"></i><span>数据分析</span></dt>
+            </dl>
+        </div>
+    </div>
+    <!--左边导航栏 end-->
+    <!--主要内容 start-->
+    <div class="content-mian">
+        <div class="content-main-box">
+            <!--正在经营商品 start-->
+            <div class="content-piece operating-commodity">
+                <p class="tit">正在经营商品<span>（商品数量：36）</span></p>
+                <p class="prompt"><i class="iconfont ib"></i>至少有一个关联顾问的商品即是正在经营的商品</p>
+                <form action="" class="form-box">
+                    <ul class="">
+                        <li>
+                            <p class="tit">商品类别</p>
+                            <div class="handle">
+                                <select class="beautify">
+                                    <option value="">一级类别全部</option>
+                                    <option value="">一级类别全部</option>
+                                    <option value="">一级类别全部</option>
+                                </select>
+                                <span class="link-line ib"></span>
+                                <select class="beautify">
+                                    <option value="">二级类别全部</option>
+                                    <option value="">二级类别全部</option>
+                                    <option value="">二级类别全部</option>
+                                </select>
+                                <span class="link-line ib"></span>
+                                <select class="beautify">
+                                    <option value="">三级类别全部</option>
+                                    <option value="">三级类别全部</option>
+                                    <option value="">三级类别全部</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="tit">商品spu编号</p>
+                            <div class="handle">
+                                <input type="text" class="blue-border-focus"/>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="tit">商品名称</p>
+                            <div class="handle">
+                                <input type="text" class="blue-border-focus"/>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="tit">平台开放定价</p>
+                            <div class="handle">
+                                <select class="beautify">
+                                    <option value="">全部</option>
+                                    <option value="">全部</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="tit">顾问改价</p>
+                            <div class="handle">
+                                <select class="beautify">
+                                    <option value="">全部</option>
+                                    <option value="">全部</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="search-btn btnh ib">搜索</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!--正在经营商品 end-->
+            <!--搜索内容 start-->
+            <div class="content-piece">
+                <div class="operating-search-cont">
+                    <div class="business-operating-batch">
+                        <label  class="checkbox-piece">
+                            <input type="checkbox"  id="businessOperatingAll"/>
+                            <i class="checkbox-icon ib iconfont"></i>
+                            全选
+                        </label>
+                        <a href="javascript:void(0);" class="batch-operation ib" onclick="deeppurepop('设置关联顾问','#addOrRelieve')">批量设置关联顾问</a>
+                        <a href="javascript:void(0);" class="batch-operation ib">批量顾问可定价</a>
+                        <a href="javascript:void(0);" class="batch-operation ib">批量顾问不可定价</a>
+                    </div>
+                    <table class="table define-table custom-check-table business-operating-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>商品spu编号</th>
+                                <th>商品名称</th>
+                                <th>商品类别</th>
+                                <th><p class="text-center">经营人数</p></th>
+                                <th>
+                                    <div class="text-center">
+                                        <p class="tit cursor" id="openPricing">平台开放定价<i class="question-icon iconfont ib"></i></p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="text-center">
+                                        <p class="tit cursor" id="adviserCustomPrice">顾问自定价<i class="question-icon iconfont ib"></i></p>
+                                    </div>
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123456789123456789</span></td>
+                                <td>公司地址公司公司地址 公司公司地址公司公司</td>
+                                <td>公司变更公司 变更公司</td>
+                                <td><p class="text-center">2</p></td>
+                                <td><p class="text-center">否</p></td>
+                                <td><div class="text-center custom-price">——</div></td>
+                                <td>
+                                    <div class="handle">
+                                        <a href="javascript:void(0);" onclick="deeppurepop('设置关联顾问','#addOrRelieve')">设置关联顾问</a>
+                                        <a href="javascript:void(0);" onclick="deeppurepop('修改商品价格','#changePrice')">修改价格</a>
+                                        <a href="javascript:void(0);">查看价格</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123456789123456789</span></td>
+                                <td>公司地址公司公司地址 公司公司地址公司公司</td>
+                                <td>公司变更公司 变更公司</td>
+                                <td><p class="text-center">2</p></td>
+                                <td><p class="text-center">否</p></td>
+                                <td><div class="text-center custom-price">——</div></td>
+                                <td>
+                                    <div class="handle">
+                                        <a href="javascript:void(0);" onclick="deeppurepop('设置关联顾问','#addOrRelieve')">设置关联顾问</a>
+                                        <a href="javascript:void(0);" onclick="deeppurepop('修改商品价格','#changePrice')">修改价格</a>
+                                        <a href="javascript:void(0);">查看价格</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123456789123456789</span></td>
+                                <td>公司地址公司公司地址 公司公司地址公司公司</td>
+                                <td>公司变更公司 变更公司</td>
+                                <td><p class="text-center">2</p></td>
+                                <td><p class="text-center">否</p></td>
+                                <td>
+                                    <div class="custom-price text-center">
+                                        <a href="javascript:void(0);" class="slide-bth ib"><span class="ib">N</span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="handle">
+                                        <a href="javascript:void(0);" onclick="deeppurepop('设置关联顾问','#addOrRelieve')">设置关联顾问</a>
+                                        <a href="javascript:void(0);" onclick="deeppurepop('修改商品价格','#changePrice')">修改价格</a>
+                                        <a href="javascript:void(0);">查看价格</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123456789123456789</span></td>
+                                <td>公司地址公司公司地址 公司公司地址公司公司</td>
+                                <td>公司变更公司 变更公司</td>
+                                <td><p class="text-center">2</p></td>
+                                <td><p class="text-center">否</p></td>
+                                <td>
+                                    <div class="custom-price text-center">
+                                        <a href="javascript:void(0);" class="slide-bth ib"><span class="ib">Y</span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="handle">
+                                        <a href="javascript:void(0);" onclick="deeppurepop('设置关联顾问','#addOrRelieve')">设置关联顾问</a>
+                                        <a href="javascript:void(0);" onclick="deeppurepop('修改商品价格','#changePrice')">修改价格</a>
+                                        <a href="javascript:void(0);">查看价格</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--分页 start-->
+                    <div class="page-box">
+                        <div class="page-cont simple-page-cont">
+                            <a href="javascript:void(0);" class="prevPage"><i class="iconfont ib"></i></a>
+                            <span class="page-number">
+                                <a href="javascript:void(0);" class="active">1</a>
+                                <a href="javascript:void(0);">2</a>
+                                 <a href="javascript:void(0);">3</a>
+                                <span>...</span>
+                            </span>
+                            <a href="javascript:void(0);" class="nextPage"><i class="iconfont ib"></i></a>
+                            <span class="page-total">
+                                <input type="text" class="blue-border-focus">
+                                <a href="javascript:void(0);" class="page-total-sure">跳转</a>
+                            </span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!--分页 end-->
+                </div>
+            </div>
+            <!--搜索内容 end-->
+        </div>
+    </div>
+    <!--主要内容 end-->
+    <div class="clear"></div>
+</div>
+<!--内容 end-->
+<!--弹窗-->
+    <!-- 弹窗-新增／解除关联顾问 start-->
+<div class="business-layer-main" id="addOrRelieve">
+    <div class="add-or-relieve">
+        <ul class="add-relieve-tit">
+            <li><a href="javascript:void(0);">新增关联顾问</a><i class="ib line"></i></li>
+            <li><a href="javascript:void(0);">解除关联顾问</a><i class="ib line"></i></li>
+        </ul>
+        <div class="add-relieve-cont">
+            <div class="scroll-table">
+                <div class="add-relieve-box">
+                    <table class="table define-table custom-check-table scroll-table-tbody">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>顾问编号</th>
+                                <th>顾问姓名</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkbox-piece">
+                                        <input type="checkbox"/>
+                                        <i class="checkbox-icon ib iconfont"></i>
+                                    </label>
+                                </td>
+                                <td><span class="wrap">123448799</span></td>
+                                <td>张华</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="add-relieve-handle">
+                    <label for="addRelieveAll" class="checkbox-piece">
+                        <input type="checkbox"  id="addRelieveAll"/>
+                        <i class="checkbox-icon ib iconfont"></i>
+                        全选
+                    </label>
+                    <p class="checked-num">已选择：<span>18人</span></p>
+                    <a href="javascript:void(0);" class="sure-btn sure-add ib btnh">确认新增</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="scroll-table">
+                <div class="add-relieve-box">
+                    <table class="table define-table custom-check-table scroll-table-tbody">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>顾问编号</th>
+                                <th>顾问姓名</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="checkbox-piece">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                </label>
+                            </td>
+                            <td><span class="wrap">123448799</span></td>
+                            <td>张华</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="add-relieve-handle">
+                    <label for="relieveRelieveAll" class="checkbox-piece">
+                        <input type="checkbox"  id="relieveRelieveAll"/>
+                        <i class="checkbox-icon ib iconfont"></i>
+                        全选
+                    </label>
+                    <p class="checked-num">已选择：<span>18人</span></p>
+                    <a href="javascript:void(0);" class="sure-btn sure-add ib btnh">确认新增</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- 弹窗-修改价格-->
+<div class="business-layer-main" id="changePrice">
+    <div class="change-price scroll-table">
+        <div class="business-info-piece">
+            <p class="tit">公司刻章</p>
+            <p class="describe">
+                <span>123456789123456789</span>
+                <span class="line">|</span>
+                <span>北京站</span>
+                <span class="line">|</span>
+                <span>工商服务- 公司注册-有限责任公司注册（含注册地址）</span>
+            </p>
+            <div class="small-tag">
+                <span class="ib operating-tag">正在经营</span>
+                <span class="ib operating-num-tag">18人在经营</span>
+            </div>
+        </div>
+        <!--<table class="table define-table scroll-table-thead">-->
+            <!-- -->
+        <!--</table>-->
+        <div class="add-relieve-box">
+            <table class="table define-table scroll-table-tbody">
+                <thead>
+                    <tr>
+                        <th>服务区域</th>
+                        <th>预设属性1</th>
+                        <th>预设属性2</th>
+                        <th><p class="text-right">市场价(元)</p></th>
+                        <th><p class="text-right">平台销售价(元)</p></th>
+                        <th>
+                            <div class="width150">
+                                <div class="edit-icon-box ib cursor">
+                                    <span class="tit">商户销售价(元)<i class="edit-icon iconfont ib"></i></span>
+                                    <div class="batch-update-pop">
+                                        <span>批量设置价格</span>
+                                        <input type="text" class="focus-change-self"/>
+                                        <span>元</span>
+                                        <a href="javascript:void(0);" class="set-up btnh ib">设置</a>
+                                        <i class="triangle ib"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>成都市-金牛区</td>
+                        <td>预设属性值预设属性</td>
+                        <td>其他其他属性其他</td>
+                        <td><p class="text-right">234.00</p></td>
+                        <td><p class="text-right">面议</p></td>
+                        <td>
+                            <div class="price-set-up">
+                                <input type="text" class="focus-change-self"/>
+                                <label class="checkbox-piece dynamic-id">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                    面议
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>成都市-金牛区</td>
+                        <td>预设属性值预设属性</td>
+                        <td>其他其他属性其他</td>
+                        <td><p class="text-right">234.00</p></td>
+                        <td><p class="text-right">面议</p></td>
+                        <td>
+                            <div class="price-set-up">
+                                <input type="text" class="focus-change-self"/>
+                                <label class="checkbox-piece dynamic-id">
+                                    <input type="checkbox"/>
+                                    <i class="checkbox-icon ib iconfont"></i>
+                                    面议
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="handle-box">
+            <a href="javascript:void(0);" class="ib btnh">确定修改</a>
+        </div>
+    </div>
+</div>
+<script src="../../../../js/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/layer/layer.js"></script>
+<script src="../../../../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../../../../js/global/selectStyle.js"></script>
+<script src="../../../../js/global/frame.js"></script>
+<script>
+    $(function(){
+//tips
+        $("#adviserCustomPrice").mouseenter(function(){
+            layer.tips('针对平台开放定价的商品，商户可设置 即此商品顾问是否拥有自行定价的权限。', '#adviserCustomPrice', {
+                tips: [3, '#fdf7f3'],
+                time: 4000,
+                skin:'tips-sanjiao'
+            });
+            $('.layui-layer-TipsG.layui-layer-TipsB').html('<em></em>');
+        });
+        $("#adviserCustomPrice").mouseleave(function(){
+            layer.closeAll('tips');
+        });
+        $("#openPricing").mouseenter(function(){
+            layer.tips('针对平台开放定价的商品，商户可设置 即此商品顾问是否拥有自行定价的权限。', '#openPricing', {
+                tips: [3, '#fdf7f3'],
+                time: 4000,
+                skin:'tips-sanjiao'
+            });
+            $('.layui-layer-TipsG.layui-layer-TipsB').html('<em></em>');
+        });
+        $("#openPricing").mouseleave(function(){
+            layer.closeAll('tips');
+        });
+//全选
+        $(".business-operating-batch>.checkbox-piece").click(function(e){
+            checkAll(e,".business-operating-batch>.checkbox-piece",".business-operating-table .checkbox-piece");
+        });
+        $(".add-relieve-handle>.checkbox-piece").click(function(e){
+            checkAll(e,".add-relieve-handle>.checkbox-piece",".add-relieve-table .checkbox-piece");
+        });
+//tab切换
+        $('.add-or-relieve').myTab({
+            content:'.add-relieve-cont',
+            tabTitle:'.add-relieve-tit'
+        });
+    });
+
+</script>
+</body>
+</html>

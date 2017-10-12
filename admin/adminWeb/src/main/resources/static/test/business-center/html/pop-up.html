@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    <title></title>
+</head>
+<body>
+<!--header start-->
+<div class="head">
+    <div class="head-box">
+        <h1 class="logo">
+            <a href="javascript:void(0);"></a>
+        </h1>
+        <div class="area">
+            <a href="javascript:void(0);">
+                <span>北京站</span>
+                <i class="iconfont triangle"></i>
+                <ul class="area-menu">
+                    <li>重庆站</li>
+                    <li class="active">成都站</li>
+                    <li>深圳站</li>
+                </ul>
+            </a>
+        </div>
+        <div class="info-bar">
+            <a href="javascript:void(0);" class="user-info">
+                <div class="user-head">
+                    <img src="../images/head.jpg" alt=""/>
+                </div>
+                <div class="user-data">
+                    <span class="name">商家（第三方）</span>
+                    <span class="company">成都风铃咨询有限公司</span>
+                </div>
+            </a>
+            <div class="nav">
+                <a href="javascript:void(0);" class="news"><i class="iconfont"></i><span>消息</span></a>
+                <a href="javascript:void(0);" class="quit"><i class="iconfont"></i><span>退出</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--header end-->
+<!--内容 start-->
+<div class="content-box">
+    <!--左边导航栏 start-->
+    <div class="cont-side">
+        <div class="menu-box">
+            <dl>
+                <dt><i class="iconfont mechanism"></i><span>机构管理</span></dt>
+                <dd><a href="javascript:void(0);" class="active">机构信息</a></dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont commodity"></i><span>商品管理</span></dt>
+                <dd><a href="javascript:void(0);">商品关联</a></dd>
+                <dd><a href="javascript:void(0);">商品价格修改</a></dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont adviser"></i><span>顾问管理</span></dt>
+                <dd><a href="javascript:void(0);">顾问列表</a></dd>
+                <dd><a href="javascript:void(0);">顾问权限设置</a></dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont order"></i><span>订单管理</span></dt>
+            </dl>
+            <dl>
+                <dt><i class="iconfont finance"></i><span>财务管理</span></dt>
+            </dl>
+            <dl>
+                <dt><i class="iconfont data"></i><span>数据分析</span></dt>
+            </dl>
+        </div>
+    </div>
+    <!--左边导航栏 end-->
+    <!--主要内容 start-->
+    <div class="content-mian">
+
+        <a href="javascript:void(0);" onclick="purepop('移出顾问确认','#removeAdviser')">弹窗</a>
+        <a href="javascript:void(0);" onclick="purepop('自动关联顾问-功能说明','#relationAdviser')">弹窗</a>
+    </div>
+    <!--主要内容 end-->
+    <div class="clear"></div>
+</div>
+<!--内容 end-->
+
+<!--弹窗 start-->
+<!--移出顾问确认-->
+<div class="business-layer-main" id="removeAdviser">
+    <div class="remove-adviser">
+        <p class="tit">确定要将该顾问移出此名单？</p>
+        <p class="describe">移出后，该顾问将自动关联商品，不可单独设置</p>
+    </div>
+    <div class="layer-handle">
+        <a href="javascript:void(0);" class="cancel ib btnh">取消</a>
+        <a href="javascript:void(0);" class="confirm ib btnh">确定</a>
+    </div>
+</div>
+<!--自动关联顾问-功能说明-->
+<div class="business-layer-main" id="relationAdviser">
+    <div class="relation-adviser">
+        <p class="tit">为什么要把商品和顾问关联？</p>
+        <p class="describe">商户看到的商品是顶呱呱已经设置好的上架商品，只有把这些商品与商户的顾问关联后，用户才能在该商品下选择该商户的顾问进行下单购买。</p>
+        <p class="tit">自动关联有什么好处？</p>
+        <p class="describe">不需要针对每个商品去手动关联顾问，自动关联后，系统将根据顾问和商品的站点和商品类别属性自动匹配。匹配成功，自动关联后，用户即可购买该顾问的此商品。</p>
+        <p class="tit">自动关联时需要注意什么？</p>
+        <p class="describe">由于平台发布商品有两类，第一类不允许商户修改价格，第二类允许商户修改价格，针对允许商户修改价格的商品，此类商品，平台发布后，会自动进入商品白名单，必须商户确认价格后，手动关联顾问或者移出白名单参与自动关联。</p>
+    </div>
+</div>
+<!--弹窗 end-->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../js/global/frame.js"></script>
+<script>
+
+</script>
+</body>
+</html>
