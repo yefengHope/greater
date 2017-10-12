@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<title>添加用户</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link th:href="@{/plugs/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
+<link th:href="@{/plugs/bootstrap/bootstrap-select-1.11.2/dist/css/bootstrap-select.min.css}" rel="stylesheet"/>
+<th:block th:include="include.head :: bootstrap_validate_css"/>
+
+
+<th:block th:include="include.foot :: form_componet_js"/>
+<th:block th:include="include.foot :: bootstrap_validate_js"/>
+<script th:src="@{/js/util/page/load/form.js}"/>
+<body>
+<div class="row">
+    <!--/* 树形控件 - start */-->
+    <div class="col-sm-4">
+
+    </div>
+    <!--/*   树形控件 - end */-->
+    <!--/* 表单 添加用户 - start */-->
+    <form id="defaultForm">
+        <div class="panel panel-success col-sm-4">
+            <div class="panel-heading">添加用户</div>
+            <div class="panel-body">
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">昵称</label>
+                        <div class="col-sm-8">
+                            <input id="name" name="name" type="text" class="form-control"
+                                   placeholder="昵称" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">帐号</label>
+                        <div class="col-sm-8">
+                            <input id="loginNum" name="loginNum" type="text" class="form-control"
+                                   placeholder="帐号" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">密码</label>
+                        <div class="col-sm-8">
+                            <input id="loginPwd" name="loginPwd" type="text" class="form-control"
+                                   placeholder="密码" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">手机</label>
+                        <div class="col-sm-8">
+                            <input id="phone" name="phone" type="tel" class="form-control" placeholder="手机"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">邮箱</label>
+                        <div class="col-sm-8">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="邮箱"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">安全问题</label>
+                        <div class="col-sm-8">
+                            <select id="question" name="question" class="selectpicker" data-live-search="true">
+                                <option></option>
+                                <option>你的第一次掉在哪里?</option>
+                                <option>你最喜欢去哪里?</option>
+                                <option>你的女朋友叫什么名字?</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" class="btn btn-info">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+    <!--/*   表单 添加用户 - end */-->
+    <!--/* 暂时未用  start -->
+    <div class="col-sm-4">
+
+    </div>
+    <!--   暂时未用  end */-->
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#defaultForm').bootstrapValidator({
+//            container: 'tooltip',
+//        trigger: 'blur',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                name: {
+                    validators: {
+                        stringLength: {
+                            enabled: false,
+                            min: 4,
+                        },
+                        notEmpty: {
+                        },
+                        regexp: {
+                            enabled: true,
+                            regexp: /^[a-z]+$/i,
+                        }
+                    }
+                },
+                loginNum: {
+                    validators: {
+                        stringLength: {
+                            min: 6,
+                        },
+                        notEmpty: {
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9]+$/i,
+                            message: '只能输入 a-z, A-Z , 0-9 '
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

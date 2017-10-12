@@ -1,0 +1,184 @@
+<!-- /* bootstrap 服务端版 */-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>用户列表</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <!--<th:block th:include="head ::head_css"></th:block>-->
+    <th:block th:include="include.head :: bootstrap_table_css"/>
+</head>
+<body>
+
+
+<div id="toolbar">
+    <div class="form-inline" role="form">
+        <div class="form-group">
+            <button type="button" class="btn btn-default" id="rowbtnid">
+                获取选中列
+            </button>
+        </div>
+        <!--/* 增删改 start */-->
+        <div class="form-group">
+            <button type="button" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i>
+            </button>
+            <button type="button" class="btn btn-default">
+                <i class="glyphicon glyphicon-heart"></i>
+            </button>
+            <button type="button" class="btn btn-default">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+        </div>
+        <!--/* 增删改 end */-->
+        <!--<div class="form-group">
+        </div>-->
+        <div class="form-group">
+            <input name="search" class="form-control" type="text" placeholder="自定义文本框"/>
+        </div>
+        <button id="ok" type="submit" class="btn btn-default">美不美</button>
+    </div>
+</div>
+<table id="userId">
+
+</table>
+<!--<th:block th:include="head ::head_js"></th:block>-->
+<th:block th:include="include.foot :: head_js"/>
+<th:block th:include="include.foot :: bootstrap_table_js"/>
+
+
+<script>
+    $(function () {
+        $('#userId').bootstrapTable({
+            method: 'post',
+            contentType: "application/x-www-form-urlencoded",
+            toolbar: '#toolbar',      //工具按钮用哪个容器
+            striped: true,          //是否显示行间隔色
+            cache: false,           //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pagination: true,       //是否显示分页（*）
+            sortable: true,         //是否启用排序
+            sortOrder: "desc",      //排序方式
+            pageNumber: 1,           //初始化加载第一页，默认第一页
+            pageSize: 10,           //每页的记录行数（*）
+            pageList: [10, 25, 50],     //可供选择的每页的行数（*）
+            url: "/user/all_page_list.json",  //这个接口需要处理bootstrap table传递的固定参数
+            queryParamsType: '',         //默认值为 'limit' ,在默认情况下 传给服务端的参数为：offset,limit,sort
+                                         // 设置为 ''  在这种情况下传给服务器的参数为：pageSize,pageNumber
+            queryParams: bootstrapTableInitQueryParams,   //前端调用服务时，会默认传递上边提到的参数，如果需要添加自定义参数，可以自定义一个函数返回请求参数
+            sidePagination: "server",       //分页方式：client客户端分页，server服务端分页（*）
+            search: true,                   //是否显示表格搜索,服务端搜索需设置sidePagination: "server",，反之
+            strictSearch: false,            //设置为 true启用 全匹配搜索，否则为模糊搜索
+            searchOnEnterKey: true,        //回车搜索
+            searchText: "",                   //初始化搜索文字
+            showColumns: true,          //是否显示所有的列
+            showRefresh: true,          //是否显示刷新按钮
+            minimumCountColumns: 2,     //最少允许的列数
+            clickToSelect: true,        //是否启用点击选中行
+            undefinedText : "--",
+            columns: [{
+                idField: 'id',
+                checkbox: true,
+                align: 'center'
+            },
+                {
+                    field: 'name',
+                    title: '名称',
+                    align: 'center'
+                }, {
+                    field: 'loginNum',
+                    title: '登录账号',
+                    align: 'center'
+                }, {
+                    field: 'phone',
+                    title: '联系方式',
+                    align: 'center'
+                }, {
+                    field: 'email',
+                    title: '用户邮箱',
+                    align: 'center',
+                    editable: {
+                        type: 'text',
+                        title: '用户邮箱',
+                        validate: function (value) {
+                            value = $.trim(value);
+                            if (!value) {
+                                return '必填项';
+                            }
+                            var data = $table.bootstrapTable('getData'),
+                                index = $(this).parents('tr').data('index');
+                            console.log(data[index]);
+                            return '';
+                        }
+                    },
+                }, {
+                    field: 'headIcon',
+                    title: '头像',
+                    align: 'center',
+
+                    editable: {
+                        type: 'text',
+                        title: '头像',
+                        validate: function (value) {
+                            value = $.trim(value);
+                            if (!value) {
+                                return '必填项';
+                            }
+                            var data = $table.bootstrapTable('getData'),
+                                index = $(this).parents('tr').data('index');
+                            console.log(data[index]);
+                            return '';
+                        },
+                        success: function(response, newValue) {
+                            alert("我改变了单元格内容! ");
+                        }
+                    },
+                }, {
+                    field: 'aStatus',
+                    title: '账号状态',
+                    align: 'center'
+                }]
+        })
+    })
+
+    var $table = $('#userId'),
+        $button = $('#rowbtnid');
+    $button.click(function () {
+        var selects = $table.bootstrapTable('getSelections');
+        console.log(selects);
+        var culength = selects.length;
+        console.log(culength);
+        /*<![CDATA[*/
+        for (var i = 0; i < culength; i++) {
+            console.log(selects[i].id);
+        }
+        /*]]>*/
+    });
+
+    bootstrapTableInitQueryParams = function (params) {
+        /*params 为bootStarp自带参数*/
+        return {
+            limit: params.pageSize,             //分页大小,不知道为什么pageSize获取失败
+            pageNumber: params.pageNumber,       //当前页码
+            searchText: params.searchText,       //搜索文本
+            sortOrder: params.sortOrder,         //排序列名
+            sortName: params.sortName,           //自带搜索框获取的文本
+        }
+    }
+
+    //------------------ 格式化列 ------------------
+    //js方式:列参数formatter:"nameFormatter" html方式:data-formatter = "nameFormatter"
+    //格式化1
+    function nameFormatter(value) {
+        return '<a href="https://github.com/wenzhixin/' + value + '">' + value + '</a>';
+    }
+    //格式化2
+    function runningFormatter(value, row, index) {
+        return index;
+    }
+</script>
+</body>
+</html>

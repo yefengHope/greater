@@ -1,0 +1,25 @@
+<!--head.html 存放css  foot存放js-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--/*  js  */-->
+<th:block th:fragment="head_js">
+    <!--/*  原生框架  */-->
+    <!--<script th:src="@{/js/chihuo/jquery-2.1.1.js}"></script>-->
+    <script th:src="@{/plugs/jquery/jquery-3.1.1/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrap-3.3.0-dist/js/bootstrap.min.js}"></script>
+    <!--/*  监控函数  */-->
+    <script th:src="@{/js/util/listener/listener.js}"></script>
+
+
+    <script th:src="@{ /plugs/bootstrap/bootstrap-datetimepicker.fr.js}"></script>
+    <script th:src="@{ /plugs/bootstrap/bootstrap-datetimepicker.js}"></script>
+
+    <script th:src="@{/plugs/owl-carousel/owl.carousel.min.js}"></script>
+
+</th:block>
+
+
+
+</html>

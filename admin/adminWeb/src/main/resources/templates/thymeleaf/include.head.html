@@ -1,0 +1,42 @@
+<!--/* head.html 存放css  foot存放js */-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*  css  */-->
+    <th:block th:fragment="head_css">
+        <!--/*  原生样式  */-->
+        <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
+        <link th:href="@{/plugs/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
+        <!--/*  非原生样式  */-->
+        <link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>
+        <link th:href="@{/html_model/hplus/css/animate.min.css}"  rel="stylesheet"/>
+        <link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/><!--/*h+主要样式 和bootstrap表格按钮样式有冲突*/-->
+
+
+    </th:block>
+
+
+
+    <th:block th:fragment="bootstrap_table_css">
+        <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
+        <link th:href ="@{/plugs/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href ="@{/plugs/bootstrap/bootstrap-table-v1.11.0/dist/bootstrap-table.css}" rel="stylesheet"/>
+        <link th:href ="@{/plugs/bootstrap/x-editable-develop/dist/bootstrap3-editable/css/bootstrap-editable.css}" rel="stylesheet"/>
+    </th:block>
+
+    <th:block th:fragment="form_componet_css">
+        <th:block th:include="include.head :: head_css"/>  <!--/*  引用上面  */-->
+        <link th:href="@{/plugs/bootstrap/bootstrap-select-1.11.2/dist/css/bootstrap-select.min.css}" rel="stylesheet"/>
+        <!--/*  下拉框  */-->
+        <link th:href="@{/plugs/form/icheck-1.x/skins/square/green.css}" rel="stylesheet"/>
+        <!--<link th:href="@{/plugs/form/icheck-1.x/demo/css/custom.css}" rel="stylesheet"/>-->
+    </th:block>
+
+
+    <th:block th:fragment="bootstrap_validate_css">
+        <link th:href="@{/plugs/bootstrap/bootstrapvalidator-master/dist/css/bootstrapValidator.min.css}" rel="stylesheet"/>
+    </th:block>
+
+</head>
+
+</html>

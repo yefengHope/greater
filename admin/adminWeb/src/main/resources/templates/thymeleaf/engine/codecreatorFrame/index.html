@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>代码生成器-主页</title>
+</head>
+<body>
+    <!-- /* 全局div 分为3列*/ -->
+    <div th:class="row">
+        <!-- /* 左侧div (tree)*/ -->
+        <div th:class="col-md-3">
+
+        </div>
+
+        <!-- /* 中间div (form) */ -->
+        <div th:id="center_body" th:class="col-md-6">
+            <!-- /* 查询表单 - 查询类信息 */ -->
+            <div >
+                <form th:action="" th:id="center_body_select_from" th:name="select_from" >
+
+                </form>
+            </div>
+
+            <!-- /* 获取的查询类的展示 */ -->
+            <div th:id="center_body_class_info" th:name="class_info">
+                <form th:name="class_info_form" th:id="center_body_class_info_form" role="form">
+                    <!-- /* 循环读取类信息 */ -->
+                    <div>
+                        <!-- /* 字段名 */ -->
+                        <div th:name="fieldName"></div>
+                        <!-- /* 字段类型 */ -->
+                        <div th:name="fieldType"></div>
+                        <!-- /* 字段注解 */ -->
+                        <div th:name="fieldAnnotation">
+                            <ul th:each="feat : ${allFeatures}">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+        <!-- /* 右侧div (属性) */ -->
+        <div th:class="col-md-3">
+
+        </div>
+    </div>
+
+</body>
+</html>

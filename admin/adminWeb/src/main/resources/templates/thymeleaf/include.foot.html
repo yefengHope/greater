@@ -1,0 +1,43 @@
+<!--head.html 存放css  foot存放js-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--/*  js  */-->
+<th:block th:fragment="head_js">
+    <!--/*  原生框架  */-->
+    <script th:src="@{/plugs/jquery/jquery-3.1.1/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrap-3.3.0-dist/js/bootstrap.min.js}"></script>
+    <!--/*  监控函数  */-->
+    <script th:src="@{/js/util/listener/listener.js}"></script>
+    <!-- /* 开源弹出层 */ -->
+    <script th:src="@{/plugs/layer_v3_0_1/layer.js}"></script>
+    <!-- /* iframe选项卡控件 */ -->
+    <script th:src="@{/js/util/iframe/tabs.js}"></script>
+
+</th:block>
+
+<th:block th:fragment="bootstrap_table_js">
+    <script th:src="@{/plugs/bootstrap/bootstrap-table-v1.11.0/dist/bootstrap-table.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrap-table-v1.11.0/dist/locale/bootstrap-table-zh-CN.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrap-table-v1.11.0/dist/extensions/editable/bootstrap-table-editable.js}"/>
+    <script th:src="@{/plugs/bootstrap/x-editable-develop/dist/bootstrap3-editable/js/bootstrap-editable.js}"/>
+
+</th:block>
+
+<th:block th:fragment="bootstrap_validate_js">
+    <script th:src="@{/plugs/bootstrap/bootstrapvalidator-master/dist/js/bootstrapValidator.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrapvalidator-master/dist/js/language/zh_CN.js}"></script>
+</th:block>
+
+
+<th:block th:fragment="form_componet_js">
+    <th:block th:include="include.foot :: head_js"/>   <!--/*  引用上面  */-->
+    <!--/*  下拉框  */-->
+    <script th:src="@{/plugs/bootstrap/bootstrap-select-1.11.2/dist/js/bootstrap-select.min.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrap-select-1.11.2/dist/js/i18n/defaults-zh_CN.min.js}"></script>
+    <script th:src="@{/plugs/tree/zTree_v3-master/js/jquery.ztree.all.min.js}"></script>
+    <script th:src="@{/plugs/form/icheck-1.x/icheck.min.js}"></script> <!--/*  单选,复选框  */-->
+</th:block>
+
+</html>

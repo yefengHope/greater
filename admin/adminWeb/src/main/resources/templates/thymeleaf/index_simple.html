@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>小吃街后台管理 - 主页</title>
+
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <th:block th:include="head :: head_css"></th:block>
+
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+草  原来是没有东西看到
+<div style="background-color: #e5ffff">
+    <input type="button" name="点击" value="我欠揍" onclick="alert('我被打了')"/>我在document监测点击事件
+</div>
+<th:block th:include="head :: head_js"></th:block>
+<script type="application/javascript" th:src="@{/js/util/math/numeral-js/min/numeral.min.js}"></script>
+
+<script>
+    $(document).on("click",function (event) {
+        var curObj = $(event.target);   //点击发生的地方
+        curObj.each(function (index) {
+            console.log("我来自当前页监听函数:");
+            console.log(index,this.name,this.value);
+        });
+    });
+</script>
+</body>
+</html>

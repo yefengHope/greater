@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hf.adminDao.dao.RoleMapper">
+
+    <resultMap id="roleEntity" type="com.hf.adminDao.entity.RoleEntity">
+        <result column="SYSTEM_ID" property="systemId"/>
+        <result column="NAME_KEY" property="nameKey"/>
+        <result column="CREATE_ID" property="createId"/>
+        <result column="CREATE_NAME" property="createName"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <result column="UPDATE_ID" property="updateId"/>
+        <result column="UPDATE_NAME" property="updateName"/>
+        <result column="UPDATE_DATE" property="updateDate"/>
+
+    </resultMap>
+    <update id="batchUpdateState">
+        UPDATE ts_role SET status = #{status}
+        WHERE
+        id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+
+    <select id="findByRoleList" resultMap="roleEntity">
+
+        SELECT
+          r.*
+        FROM ts_role r
+        <where>
+            <if test="roles != null">
+                r.ID IN
+                <foreach collection="roles" item="roleId" open="(" close=")" separator=",">
+                     #{roleId}
+                </foreach>
+            </if>
+        </where>
+
+    </select>
+</mapper>

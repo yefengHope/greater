@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>口味测定</title>
+    <th:block th:include="include.head :: form_componet_css"/>
+    <link th:href="@{/plugs/steps/jquery.steps.css}"  rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+
+    <form class="form-horizontal">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                <h5>口味测定</h5>
+                <!--<div class="ibox-tools">-->
+                <!--<a class="collapse-link">-->
+                <!--<i class="fa fa-chevron-up"></i>-->
+                <!--</a>-->
+                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="form_wizard.html#" tppabs="http://www.zi-han.net/theme/hplus/form_wizard.html#">-->
+                <!--<i class="fa fa-wrench"></i>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu dropdown-user">-->
+                <!--<li><a href="form_wizard.html#" tppabs="http://www.zi-han.net/theme/hplus/form_wizard.html#">选项1</a>-->
+                <!--</li>-->
+                <!--<li><a href="form_wizard.html#" tppabs="http://www.zi-han.net/theme/hplus/form_wizard.html#">选项2</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--<a class="close-link">-->
+                <!--<i class="fa fa-times"></i>-->
+                <!--</a>-->
+                <!--</div>-->
+                </div>
+                <div class="ibox-content">
+                    <!--<p>-->
+                        <!--这是一个简单的表单向导示例-->
+                    <!--</p>-->
+                    <div id="wizard">
+
+                        <h1>酸</h1>
+                        <div class="step-content">
+                            <div class="text-center m-t-md">
+                                <h2>第一步</h2>
+                                <p>
+                                    这是第一步的内容
+                                </p>
+                            </div>
+                        </div>
+
+                        <h1>甜</h1>
+                        <div class="step-content">
+                            <div class="text-center m-t-md">
+                                <h2>第二步</h2>
+                                <p>
+                                    这是第二步的内容
+                                </p>
+                            </div>
+                        </div>
+
+                        <h1>苦</h1>
+                        <div class="step-content">
+                            <div class="text-center m-t-md">
+                                <h2>第三步</h2>
+                                <p>
+                                    这是第三步的内容
+                                </p>
+                            </div>
+                        </div>
+
+                        <h1>辣</h1>
+                        <div class="step-content">
+                            <div class="text-center m-t-md">
+                                <h2>第四步</h2>
+                                <p>
+                                    这是第四步的内容
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+<th:block th:include="include.foot :: form_componet_js"/>
+<script th:src="@{/plugs/steps/jquery.steps.min.js}"></script>
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(
+            function() {
+                $("#wizard").steps();
+            });
+
+    /*]]>*/
+</script>
+</body>
+</html>

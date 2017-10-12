@@ -1,0 +1,26 @@
+<!--/* head.html 存放css  foot存放js */-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*  css  */-->
+    <th:block th:fragment="head_css">
+
+        <!--/*  原生样式  */-->
+        <link th:href="@{/plugs/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
+        <!--/*  Owl Carousel Assets  */-->
+        <link th:href="@{/plugs/owl-carousel/owl.carousel.css}" rel="stylesheet"/>
+        <link th:href="@{/plugs/owl-carousel/owl.theme.css}" rel="stylesheet"/>
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" th:href="@{/font/font-awesome-4.4.0/css/font-awesome.min.css}"  type="text/css"/>
+
+        <!--<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen"/>-->
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" th:href="@{/css/chihuo/style.css}"/>
+
+    </th:block>
+
+
+</head>
+
+</html>

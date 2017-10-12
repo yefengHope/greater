@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>**Title**</title>
+    <th:block th:include="head ::head_css"></th:block>
+
+</head>
+<body>
+<!--/*-->
+bootstrap table 标签解释:
+data-toggle="table"         bootstrap table
+data-cell-style="cellStyle" 给左侧列加上样式,"cellStyle"是函数
+行样式:
+{
+    1. data-row-style="rowStyle"   自定义行样式, "rowStyle"是函数
+    2.  简单的行变色,悬停样式
+    {
+        data-classes="table table-hover table-condensed"
+        data-striped="true"         隔行变色
+    }
+}
+对齐
+    (可选项:center,left,right):
+    data-align="center"
+
+排序
+    基本排序
+
+    自定义排序
+        table:
+        data-sort-name="stargazers_count"  定义排序列,通过url方式获取数据填写字段名，否则填写下标
+        data-sort-order="asc"  | desc       默认排序列
+
+        th:
+        data-field="stargazers_count"
+        data-sortable="true"
+        data-sorter="starsSorter"     自定义排序函数
+        js:
+        function starsSorter(a, b) {
+            if (a < b) return 1;
+            if (a > b) return -1;
+            return 0;
+        }
+    根据属性自定义排序
+列
+        data-show-columns="true"    可勾选显示列
+视图:
+    卡片视图(默认是table视图)
+        data-card-view="true"   (supports twitter bootstrap v2 and v3)
+    切换卡片和table视图
+        data-show-toggle="true"
+
+data-click-to-select="true" 表格左侧点击复选框
+
+data-single-select="true"   表格左侧单选的复选框
+
+data-search="true"          搜索框
+data-show-refresh="true"    刷新按钮
+data-toolbar="#toolbar"     自定义导航栏,对应div
+
+组:可以合并单元格 但是在动态加载不好调整
+
+分页
+    服务端分页:
+        data-pagination="true"
+        data-side-pagination="server"
+        data-page-list="[5, 10, 20, 50, 100, 200]"
+    客户端分页:
+        data-query-params="queryParams"     客户端查询的方法
+        data-pagination="true"
+        js:
+            function queryParams() {
+                return {
+                    type: 'owner',
+                    sort: 'updated',
+                    direction: 'desc',
+                    per_page: 100,
+                    page: 1
+                };
+            }
+
+事件
+    data-events="actionEvents"  可用于操作栏
+<!--*/-->
+
+<div id="toolbar" class="btn-group">
+    <button type="button" class="btn btn-default">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+    <button type="button" class="btn btn-default">
+        <i class="glyphicon glyphicon-heart"></i>
+    </button>
+    <button type="button" class="btn btn-default">
+        <i class="glyphicon glyphicon-trash"></i>
+    </button>
+</div>
+
+<div class="">
+    <table id="" data-toggle="table"
+           data-row-style="rowStyle"
+           data-sort-name=""
+           data-sort-order="desc"
+           data-classes="table table-hover table-condensed"
+           data-striped="true"
+           data-show-columns="true"
+           data-click-to-select="true"
+           data-search="true"
+           data-show-toggle="true"
+           data-toolbar="#toolbar"
+    >
+        <thead>
+        <tr>
+            <th data-field="id" data-checkbox="true" data-sortable="true" ></th><!--复选框-->
+            <th>操作栏</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td></td>
+            <td data-events="actionEvents"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<th:block th:include="head ::head_js"></th:block>
+
+<script>
+    function cellStyle(value, row, index) {
+        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+
+        if (index % 2 === 0 && index / 2 < classes.length) {
+            return {
+                classes: classes[index / 2]
+            };
+        }
+        return {};
+    }
+    function rowStyle(row, index) {
+        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+
+        if (index % 2 === 0 && index / 2 < classes.length) {
+            return {
+                classes: classes[index / 2]
+            };
+        }
+        return {};
+    }
+    window.actionEvents = {
+        'click .like': function (e, value, row, index) {
+            alert('You click like icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },
+        'click .edit': function (e, value, row, index) {
+            alert('You click edit icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },
+        'click .remove': function (e, value, row, index) {
+            alert('You click remove icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        }
+    };
+</script>
+</body>
+</html>

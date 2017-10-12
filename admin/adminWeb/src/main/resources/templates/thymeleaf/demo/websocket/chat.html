@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>聊天室</title>
+</head>
+<body>
+<form id="defaultForm">
+    <div class="panel panel-success col-sm-4">
+        <div class="panel-heading">聊天室</div>
+        <div class="panel-body">
+            <form role="form" class="form-horizontal">
+                <div id="showInfo">
+                    <span></span>
+                </div>
+                <input type="text" id="msgBox" class="">
+                <button type="button" onclick="">发送</button>
+            </form>
+        </div>
+    </div>
+</form>
+</body>
+<script src="static/js/js/demo/websocket/sockjs-client-master/dist/sockjs.min.js"></script>
+<script>
+    var stompClient = null;
+    function setConnected(connected) {
+        document.getElementById('connect').disabled = connected;
+        document.getElementById('disconnect').disabled = !connected;
+        document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+        document.getElementById('response').innerHTML = '';
+    }
+    // 开启socket连接
+    function connect() {
+        var socket = new SockJS('/socket');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, function (frame) {
+            setConnected(true);
+        });
+    }
+    // 断开socket连接
+    function disconnect() {
+        if (stompClient != null) {
+            stompClient.disconnect();
+        }
+        setConnected(false);
+        console.log("Disconnected");
+    }
+    // 向‘/app/change-notice’服务端发送消息
+    function sendName() {
+        var value = document.getElementById('name').value;
+        stompClient.send("/app/change-notice", {}, value);
+    }
+    connect();
+</script>
+</html>
