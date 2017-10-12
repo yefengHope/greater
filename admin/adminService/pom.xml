@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>greater</artifactId>
+        <groupId>com.hf</groupId>
+        <relativePath>../../pom.xml</relativePath>
+        <!--<version>${pro.greater.version}</version>-->
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>greater.admin.service</artifactId>
+    <version>${pro.greater.admin.server.version}</version>
+    <packaging>jar</packaging>
+    <name>greater-admin-service</name>
+    <!--<url>http://maven.apache.org</url>-->
+    <dependencies>
+        <dependency>
+            <groupId>com.hf</groupId>
+            <artifactId>greater.admin.dao</artifactId>
+            <version>${pro.greater.admin.dao.version}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>fastjson</artifactId>-->
+            <!--<version>${fastjson.version}</version>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang.version}</version>
+        </dependency>
+    </dependencies>
+</project>
