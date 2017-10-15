@@ -18,4 +18,28 @@ public class VueController1 {
     @RequestMapping("eventListenOn")
     public void eventListenOn() {
     }
+
+    /**
+     * 组件小试牛刀
+     */
+    @RequestMapping("component")
+    public void component(){
+
+    }
+
+    /**
+     * vue watch实例内变量的改变
+     */
+    @RequestMapping("watch")
+    public void watch(){}
+
+    /**
+     * vue 生命周期的钩子函数示例
+     * created、mounted、updated、destroyed。
+     * 钩子的 this 指向调用它的 Vue 实例
+     */
+    @RequestMapping("lifeCycle")
+    public void lifeCycle(){
+
+    }
 }

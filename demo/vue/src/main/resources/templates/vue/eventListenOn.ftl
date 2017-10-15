@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-<script src="https://unpkg.com/vue"></script>
 
 <div id="app-5">
     <p>{{ message }}</p>
@@ -24,7 +24,7 @@
         }
     })
 
-    function bb(){
+    function bb() {
         alert("bb");
     }
 </script>
