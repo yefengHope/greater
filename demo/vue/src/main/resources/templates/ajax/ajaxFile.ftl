@@ -12,7 +12,7 @@
       <#--action="/ajax/upload" -->
       <#--action="/ajax/uploadUserAndFile"-->
       <#--action="/ajax/uploadUserFileVo"-->
-      action="/ajax/uploadUserAndFileRequest"
+      <#--action="/ajax/uploadUserAndFileRequest"-->
 >
     <input type="text" name="name">
     <input type="text" name="phone">
@@ -30,6 +30,7 @@
         $('#result').html('');
 
         $("#form2").ajaxForm({
+            url : "/ajax/uploadUserAndFileRequest",
             success:function(data) {
                 $('#result').html(data);
             },
@@ -41,11 +42,11 @@
     function uploadFormData(){
         $('#result').html('');
 
-        var oMyForm = new FormData();
-        oMyForm.append("file", file2.files[0]);
+        var oMyForm = new FormData($("#form2")[0]);
+
 
         $.ajax({
-            url: 'http://localhost:8080/spring-mvc-file-upload/rest/cont/upload',
+            url: '/ajax/uploadUserAndFileRequest',
             data: oMyForm,
             dataType: 'text',
             processData: false,
