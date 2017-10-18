@@ -36,19 +36,22 @@ public class ActivitiTest {
         // ProcessEngine processEngine = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration().buildProcessEngine();
 
         //部署流程定义文件
-        RepositoryService repositoryService = processEngine.getRepositoryService();
-        Deployment deployment = repositoryService.createDeployment().addClasspathResource("processes/demo/HelloWorld1.bpmn").deploy();
-        System.out.println("deployment:" + deployment.getId());
+        // RepositoryService repositoryService = processEngine.getRepositoryService();
+        // System.out.println(repositoryService.createDeployment().addClasspathResource("processes/demo/HelloWorld.bpmn").deploy().getId());
+        // Deployment deployment = repositoryService.createDeployment().addClasspathResource("processes/demo/HelloWorld1.bpmn").deploy();
+        // repositoryService.createDeployment().addClasspathResource("processes/demo/SayHelloToLeave.bpmn").deploy();
+        // System.out.println("deployment:" + deployment.getId());
 
         // 验证已经部署的流程定义
-        ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery().singleResult();
-        System.out.println(processDefinition.getKey());
+        // ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery().singleResult();
+        // System.out.println(processDefinition.getKey());
 
         // 启动流程并返回流程实例
         RuntimeService runtimeService = processEngine.getRuntimeService();
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("helloWorld");
         // helloWorld:2:2504
         System.out.println("pid:"+processInstance.getId() + ".pdid="+processInstance.getProcessDefinitionId());
+        System.out.println("deploymentId:" + processInstance.getDeploymentId());
     }
 
     @Test
