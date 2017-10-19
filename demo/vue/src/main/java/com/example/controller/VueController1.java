@@ -42,4 +42,18 @@ public class VueController1 {
     public void lifeCycle(){
 
     }
+
+    /**
+     * 替换数组
+     */
+    @RequestMapping("arrayReplace")
+    public void arrayReplace(){
+
+    }/**
+     * 替换对象
+     */
+    @RequestMapping("objReplace")
+    public void objReplace(){
+
+    }
 }
