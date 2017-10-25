@@ -11,6 +11,7 @@
         <module>admin/adminService</module>
         <module>admin/adminWeb</module>
         <module>payGetWay</module>
+        <module>other/engine/buildCode</module>
     </modules>
     <name>greater</name>
     <properties>
