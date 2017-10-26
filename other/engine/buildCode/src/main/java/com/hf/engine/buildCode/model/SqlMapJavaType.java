@@ -22,6 +22,7 @@ public class SqlMapJavaType implements Serializable {
         map.put("TEXT",      "java.lang.String");
         map.put("INTEGER",   "java.lang.Long");
         map.put("ID",        "java.lang.Long");
+        map.put("INT",       "java.lang.Integer");
         map.put("TINYINT",   "java.lang.Integer");
         map.put("SMALLINT",  "java.lang.Integer");
         map.put("MEDIUMINT", "java.lang.Integer");
