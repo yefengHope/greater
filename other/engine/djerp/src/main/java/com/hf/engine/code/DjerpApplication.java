@@ -20,7 +20,7 @@ public class DjerpApplication {
 	// http://blog.csdn.net/qq_30051139/article/details/72885674
 	// http://blog.csdn.net/qq496013218/article/details/75146757
 	// http://duyunfei.iteye.com/blog/903557
-
+    // http://www.cnblogs.com/xrq730/p/6785473.html
 	@Autowired
 	private ConfigurableEnvironment configurableEnvironment;
 
