@@ -29,7 +29,7 @@ public class MainCreate {
         // System.out.println(classLoadPath);
 
 
-        CodeFactoryConfig.configProp("codeFactoryConfig");
+        CodeFactoryConfig.configProp("codeFactoryDjConfig");
         createFile();
         // System.out.println(System.getProperty("user.dir"));
         // try {
