@@ -23,7 +23,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">选择框</label>
         <div class="layui-input-block">
-            <select name="city" lay-verify="required" v-model:value="form.selectedVal">
+            <select name="city" lay-verify="required" v-model = "form.selectedVal">
                 <option value=""></option>
                 <option value="0">北京</option>
                 <option value="1">上海</option>
@@ -65,6 +65,7 @@
             <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             <button type="button" class="layui-btn layui-btn-primary" onclick="apped() ">追加</button>
+            <button type="button" class="layui-btn layui-btn-primary" onclick="dymSet() ">设置</button>
         </div>
     </div>
 </form>
@@ -76,6 +77,19 @@
     // vue渲染测试
     // 1.vue绑定一个储值，select option中没有，那么绑定不成功，即使后来能加载和渲染select插件，猜想，可能需要重新set值
     //
+
+    // 结论： vue v-model在绑定一个值时，如果对应的不存在，则设置的对象找不到，略过设置
+    // 所以，需要重新设置一边，如果插件被渲染过，则需要重新更新插件
+
+    /*
+        // 设置值
+        vm.$set(vm.form,'selectedVal','3');
+        // 获取值 并输出
+        console.log($("[name=city]").val());
+        // 刷新表单渲染
+        layui.form.render();
+     */
+
     var vm = new Vue({
         el: '#myForm',
         data : {
@@ -98,6 +112,16 @@
     
     function apped() {
         $("[name=city]").append("<option value='10'>10</option>");
+    }
+
+    function dymSet() {
+//        Vue.set(vm.form,'selectedVal','10');
+        // 设置值
+        vm.$set(vm.form,'selectedVal','3');
+        // 获取值 并输出
+        console.log($("[name=city]").val());
+        // 刷新表单渲染
+        layui.form.render();
     }
 </script>
 </body>
