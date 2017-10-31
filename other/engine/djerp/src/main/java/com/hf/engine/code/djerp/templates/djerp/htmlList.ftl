@@ -6,20 +6,21 @@
 </#assign>
 
 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>商品列表</title>
 
-    <title>角色列表 - Bootstrap Table</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    ${r'<#include "../../commom/include.hplus.css.ftl" />'}
-    ${r'<#include "../../commom/include.hplus.list.css.ftl" />'}
-    <base target="_blank">
+    ${r'<%@include file="/WEB-INF/jsp/common/include/title.jsp" %>'}
+    <link rel="stylesheet" href="${r'${ctx}'}/public/libs/lib/css/bootstrap-table.css">
+    <link href="${r'${ctx}'}/public/libs/lib/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link href="${r'${ctx}'}/public/libs/bootstrap/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"/>
 </head>
 
 <body class="gray-bg">
@@ -39,18 +40,10 @@
                         <#--如果data.fields 存在,则循环写入变量-->
                         <#if data.fieldModels??>
                             <#list data.fieldModels as fildModels>
-                                <#if
-                                    fildModels.lowerCamelCaseName?contains("create")
-                                    || fildModels.lowerCamelCaseName?contains("update")
-                                    || fildModels.lowerCamelCaseName == "id"
-                                >
-
-                                <#else>
                                     <div class="form-group">
                                     <#--<label for="name">Name</label>-->
                                         <input type="text" class="form-control" name="${fildModels.lowerCamelCaseName}" placeholder="查询${fildModels.comment}">
                                     </div>
-                                </#if>
                             </#list>
                         </#if>
                             <div class="form-group">
@@ -73,11 +66,11 @@
                     </div>
                     <div class="btn-group hidden-xs" id="bootTableTool" role="group">
                         <button type="button" class="btn btn-outline btn-default"
-                                onclick="BootstrapTableFunc.toAddForm('#bootTable','${configRequestMapping?trim}/to_add.htm','role_1','新增角色',null)">
+                                onclick="BootstrapTableFunc.toAddForm('#bootTable','${r'${ctx}}'}${configRequestMapping?trim}/add','role_1','新增角色',null)">
                             <i class="glyphicon glyphicon-plus" aria-hidden="true">新增</i>
                         </button>
                         <button type="button" class="btn btn-outline btn-default"
-                                onclick="BootstrapTableFunc.toEditForm('#bootTable','${configRequestMapping?trim}/to_update.htm','role_2','编辑角色')">
+                                onclick="BootstrapTableFunc.toEditForm('#bootTable','${r'${ctx}}'}${configRequestMapping?trim}/update','role_2','编辑角色')">
                             <i class="glyphicon glyphicon-edit" aria-hidden="true">编辑</i>
                         </button>
                         <div class="btn-group">
@@ -86,14 +79,14 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void"
-                                       onclick="BootstrapTableFunc.updateRows('#bootTable','${configRequestMapping?trim}/batch_update_state.do',1)">启用</a>
+                                <li><a href="javascript:void(0)"
+                                       onclick="BootstrapTableFunc.updateRows('#bootTable','${r'${ctx}}'}${configRequestMapping?trim}/updateState',1)">启用</a>
                                 </li>
-                                <li><a href="javascript:void"
-                                       onclick="BootstrapTableFunc.updateRows('#bootTable','${configRequestMapping?trim}/batch_update_state.do',2)">禁用</a>
+                                <li><a href="javascript:void(0)"
+                                       onclick="BootstrapTableFunc.updateRows('#bootTable','${r'${ctx}}'}${configRequestMapping?trim}/updateState',2)">禁用</a>
                                 </li>
-                                <li><a href="javascript:void"
-                                       onclick="BootstrapTableFunc.updateRows('#bootTable','${configRequestMapping?trim}/batch_update_state.do',0)">删除</a>
+                                <li><a href="javascript:void(0)"
+                                       onclick="BootstrapTableFunc.updateRows('#bootTable','${r'${ctx}}'}${configRequestMapping?trim}/updateState',0)">删除</a>
                                 </li>
                             </ul>
                         </div>
@@ -112,11 +105,17 @@
 </div>
 <!-- End Panel Other -->
 </div>
-${r'<#include "../../commom/include.hplus.js.ftl" />'}
-${r'<#include "../../commom/include.hplus.list.js.ftl" />'}
+${r'<%@include file="/WEB-INF/jsp/common/include/footer.jsp" %>'}
+<script src="${r'${ctx}'}/public/js/utils/bootstrap.extends.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-treeview.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-datetimepicker.min.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="${r'${ctx}'}/public/libs/bootstrap/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="${r'${ctx}'}/public/libs/bootstrap/bootstrap-select/js/i18n/defaults-zh_CN.min.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-table-zh-CN.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/tableExport.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-table-export.js"></script>
 
-
-<#--<#include "../../commom/include.js.ftl">-->
-<script src="/js/${configPrefix?trim}/list.js"></script>
+<script src="${r'${ctx}'}/public/${configPrefix?trim}/list.js"></script>
 </body>
 </html>

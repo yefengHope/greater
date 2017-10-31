@@ -28,13 +28,6 @@ $(document).ready(function() {
         fields: {
 <#if data.fieldModels??>
     <#list data.fieldModels as fildModels>
-        <#if
-        fildModels.lowerCamelCaseName?contains("create")
-        || fildModels.lowerCamelCaseName?contains("update")
-        || fildModels.lowerCamelCaseName == "id"
-        || fildModels.lowerCamelCaseName == "status"
-        >
-        <#else>
         ${fildModels.lowerCamelCaseName} : {
             validators: {
                 notEmpty: {
@@ -47,16 +40,8 @@ $(document).ready(function() {
                 },
             }
         },
-        </#if>
     </#list>
 </#if>
-            status : {
-                validators : {
-                    notEmpty: {
-                        message: '请选择状态'
-                    },
-                }
-            }
         }
     });
 }).on('success.form.bv', function(e) {
@@ -86,7 +71,7 @@ $(document).ready(function() {
         data : data,
         success: function (result) {
             if (result.status) {
-                Toast.showSuccess(result.info,"成功");
+                myLayer.msgSuccessDef(result.msg);
                 parentRefreshBST();
                 setTimeout(function() {
                     // 如果是 *并关闭 按钮 ，当前js有一个事件点击监控事件
@@ -96,7 +81,7 @@ $(document).ready(function() {
                     }
                 },200);
             } else{
-                Toast.showError(result.info,"失败");
+                myLayer.msgErrorDef(result.msg);
             }
         }
     };

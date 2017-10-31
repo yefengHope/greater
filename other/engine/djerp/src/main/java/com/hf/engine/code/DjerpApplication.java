@@ -31,7 +31,7 @@ public class DjerpApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(DjerpApplication.class, args);
+//		SpringApplication.run(DjerpApplication.class, args);
 		CodeFactoryConfig.configProp("codeFactoryDjConfig");
 		CodeFactoryConfig.getConfig();
 		MainCreate.createFile();

@@ -2,8 +2,7 @@ package ${config.packagePath};
 <#--package com.fengyu.system.dao;-->
 import java.util.List;
 import java.util.Map;
-import com.fengyu.system.base.BaseMapper;
-import com.fengyu.system.entity.UserEntity;
+import cn.hlhdj.duoji.erp.model.base.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,7 +15,6 @@ import org.apache.ibatis.annotations.Param;
 /**
  * Created by HF on ${.now}.
  */
-@Mapper
 public interface ${config.className} extends BaseMapper<${modelName?trim}>{
 
    /**

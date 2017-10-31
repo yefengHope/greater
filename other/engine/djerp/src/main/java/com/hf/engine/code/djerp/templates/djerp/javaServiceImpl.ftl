@@ -29,8 +29,8 @@ import java.util.List;
 /**
 * Created by HF on ${.now}.
 */
-@Service("${config.className?uncap_first}")
-public class ${config.className} extend BaseServiceImpl<${modelLowerName}> <#if fullConfig["service.impl.impl.service"]??>implements ${fullConfig["service.impl.impl.service"]}</#if> {
+@Service
+public class ${config.className} extend BaseServiceImpl<${modelLowerName?trim}> <#if fullConfig["service.impl.impl.service"]??>implements ${fullConfig["service.impl.impl.service"]}</#if> {
     private static Logger logger;
     static {
         logger = LoggerFactory.getLogger(${config.className}.class);

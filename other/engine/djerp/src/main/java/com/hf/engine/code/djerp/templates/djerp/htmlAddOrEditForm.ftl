@@ -4,6 +4,7 @@
 <#assign configPrefix>
     <#if fullConfig["controller.impl.ftl.prefix"]??>${fullConfig["controller.impl.ftl.prefix"] ?trim}</#if>
 </#assign>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -12,8 +13,10 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <title>角色表单</title>
-    ${r'<#include "../../commom/include.hplus.css.ftl" />'}
-    ${r'<#include "../../commom/include.hplus.form.css.ftl" />'}
+    ${r'<%@include file="/WEB-INF/jsp/common/include/title.jsp" %>'}
+    <link href="${r'${ctx}'}/public/libs/lib/css/bootstrap-table.css" rel="stylesheet" >
+    <link href="${r'${ctx}'}/public/libs/lib/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link href="${r'${ctx}'}/public/libs/bootstrap/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -81,8 +84,16 @@
     </div>
 </div>
 
-${r'<#include "../../commom/include.hplus.js.ftl" />'}
-${r'<#include "../../commom/include.hplus.form.js.ftl" />'}
+${r'<%@include file="/WEB-INF/jsp/common/include/footer.jsp" %>'}
+<script src="${r'${ctx}'}/public/libs/vue/vue.min.js"></script>
+<script src="${r'${ctx}'}/public/js/utils/bootstrap.extends.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-treeview.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-datetimepicker.min.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="${r'${ctx}'}/public/libs/bootstrap/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="${r'${ctx}'}/public/libs/bootstrap/bootstrap-select/js/i18n/defaults-zh_CN.min.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/bootstrap-table-zh-CN.js"></script>
+<script src="${r'${ctx}'}/public/libs/lib/js/tableExport.js"></script>
 <script>
     var formSelect = "#registrationForm";
     var dataEntity = ${r"${dataEntity!'{}'}"};
@@ -99,6 +110,6 @@ ${r'<#include "../../commom/include.hplus.form.js.ftl" />'}
         data: dataEntity,
     });
 </script>
-<script src="/js/${configPrefix?trim}/form.js"></script>
+<script src="${r'${ctx}'}/public/js/${configPrefix?trim}/form.js"></script>
 </body>
 </html>

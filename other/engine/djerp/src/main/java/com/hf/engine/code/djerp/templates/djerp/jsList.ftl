@@ -11,7 +11,7 @@ var bootTableSearchSelector = "#bootTableSearch";
 var bootTableToolSelector = "#bootTableTool";
 var bootTable = {};
 bootTable.option = {
-    url : basePath + "${configFtlPageRequestMapping?trim}/page_data.json",
+    url : basePath + "${configFtlPageRequestMapping?trim}/listJson",
     toolbar : bootTableToolSelector, /*自定义的toolbar*/
     columns : [
         <#--如果data.fields 存在,则循环写入变量-->
@@ -44,17 +44,11 @@ bootTable.option = {
         </#if>
     ]
 };
-//table init
-bootTable.init = function () {
-    $(bootTableSelector).myBootstrapTable(bootTable.option);
-};
 
 $(function () {
-    bootTable.init();
+    $(bootTableSelector).BootTableInit(bootTable.option);
 });
 
 function searchCondition() {
-    $(bootTableSelector).bootstrapTable("refresh",{
-        query: $(bootTableSearchSelector).getBSTSearchParams(),
-    });
+    $(bootTableSelector).BootTableRefresh();
 }
