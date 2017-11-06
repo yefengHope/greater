@@ -122,7 +122,8 @@ public abstract class AbstractInit {
             configMap.put("author", "HF");
             configMap.put("comment", comment);
             configMap.put("packagePath", packagePath);
-            dataMap.put("fieldModels", selectFieldModels());
+            List<FieldModel> fieldModels = selectFieldModels();
+            dataMap.put("fieldModels", fieldModels);
             // ftl的数据表内容结构
             fileMap.put("data", dataMap);                           /*数据库字段配置*/
             // ftl的配置的文件数据

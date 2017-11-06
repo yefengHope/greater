@@ -26,11 +26,13 @@ import tk.mybatis.mapper.entity.Example;
 import javax.annotation.Resource;
 import java.util.List;
 
+import cn.hlhdj.duoji.erp.model.base.service.impl.BaseServiceImpl;
+
 /**
 * Created by HF on ${.now}.
 */
 @Service
-public class ${config.className} extend BaseServiceImpl<${modelLowerName?trim}> <#if fullConfig["service.impl.impl.service"]??>implements ${fullConfig["service.impl.impl.service"]}</#if> {
+public class ${config.className} extends BaseServiceImpl<${modelName?trim}> <#if fullConfig["service.impl.impl.service"]??>implements ${fullConfig["service.impl.impl.service"]}</#if> {
     private static Logger logger;
     static {
         logger = LoggerFactory.getLogger(${config.className}.class);
