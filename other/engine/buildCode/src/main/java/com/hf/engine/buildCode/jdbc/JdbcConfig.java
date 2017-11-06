@@ -1,6 +1,7 @@
 package com.hf.engine.buildCode.jdbc;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.hf.engine.buildCode.config.CodeFactoryConfig;
 
 import java.io.Serializable;
@@ -17,72 +18,69 @@ import java.util.Map;
  */
 public class JdbcConfig implements Serializable{
 
-    private static final long serialVersionUID = 2540371774626282307L;
-
+    private static final long serialVersionUID = 9126324476724660897L;
     // JDBC 驱动名及数据库 URL
-    private static String jdbcDriver = "";
+    private String jdbcDriver = "";
 
-    private static String dbUrl = "";
+    private String dbUrl = "";
 
     // 数据库的用户名与密码，需要根据自己的设置
-    private static String user = "";
+    private String user = "";
 
-    private static String pass = "";
+    private String pass = "";
 
     // 数据库表名
-    private static String tableName = "";
+    private String tableName = "";
 
-    public static String getJdbcDriver() {
+    public JdbcConfig(JSONObject resourceMap) {
+         this.dbUrl = resourceMap.getString("db.dbUrl");
+        this.jdbcDriver = resourceMap.getString("db.jdbcDriver");
+        this.user = resourceMap.getString("db.user");
+        this.pass = resourceMap.getString("db.pass");
+        this.tableName = resourceMap.getString("db.tableName");
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getJdbcDriver() {
         return jdbcDriver;
     }
 
-    public static void setJdbcDriver(String jdbcDriver) {
-        JdbcConfig.jdbcDriver = jdbcDriver;
+    public void setJdbcDriver(String jdbcDriver) {
+        this.jdbcDriver = jdbcDriver;
     }
 
-    public static String getDbUrl() {
+    public String getDbUrl() {
         return dbUrl;
     }
 
-    public static void setDbUrl(String dbUrl) {
-        JdbcConfig.dbUrl = dbUrl;
+    public void setDbUrl(String dbUrl) {
+        this.dbUrl = dbUrl;
     }
 
-    public static String getUser() {
+    public String getUser() {
         return user;
     }
 
-    public static void setUser(String user) {
-        JdbcConfig.user = user;
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    public static String getPass() {
+    public String getPass() {
         return pass;
     }
 
-    public static void setPass(String pass) {
-        JdbcConfig.pass = pass;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
-    public static String getTableName() {
+    public String getTableName() {
         return tableName;
     }
 
-    public static void setTableName(String tableName) {
-        JdbcConfig.tableName = tableName;
-    }
-
-    public static void main(String[] args) {
-        System.out.println();
-    }
-
-    // 只能放在这里
-    static {
-        Map<String, String> resourceMap = CodeFactoryConfig.getConfig();
-        JdbcConfig.setDbUrl(resourceMap.get("db.dbUrl"));
-        JdbcConfig.setJdbcDriver(resourceMap.get("db.jdbcDriver"));
-        JdbcConfig.setUser(resourceMap.get("db.user"));
-        JdbcConfig.setPass(resourceMap.get("db.pass"));
-        JdbcConfig.setTableName(resourceMap.get("db.tableName"));
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
     }
 }

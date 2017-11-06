@@ -54,7 +54,7 @@ public class CreateGeneralTemplate extends AbstractTemplate {
         }
         Template template = null;
         try {
-            template = getTemplate(fileName);
+            template = getTemplate(fileName,map.get(""));
 
         } catch (IOException e) {
             e.printStackTrace();

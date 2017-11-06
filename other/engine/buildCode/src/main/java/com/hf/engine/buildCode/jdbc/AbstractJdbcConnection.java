@@ -1,6 +1,7 @@
 package com.hf.engine.buildCode.jdbc;
 
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -18,7 +19,7 @@ import java.util.Map;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-public abstract class AbstractJdbcConnection extends JdbcConfig {
+public abstract class AbstractJdbcConnection {
 
     private static final long serialVersionUID = -5810896424801558252L;
     private static Logger logger = Logger.getLogger(AbstractJdbcConnection.class);
@@ -26,6 +27,7 @@ public abstract class AbstractJdbcConnection extends JdbcConfig {
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
+
 
     /**
      * 获取jdbc Connection
@@ -35,14 +37,14 @@ public abstract class AbstractJdbcConnection extends JdbcConfig {
      * @throws ClassNotFoundException ClassNotFoundException
      * @throws SQLException           SQLException
      */
-    public Connection getConnection() throws ClassNotFoundException, SQLException {
+    public Connection getConnection(JdbcConfig jdbcConfig) throws ClassNotFoundException, SQLException {
 
         // 注册 JDBC 驱动
-        Class.forName(JdbcConfig.getJdbcDriver());
+        Class.forName(jdbcConfig.getJdbcDriver());
 
         // 打开链接
         logger.info("连接数据库...");
-        conn = DriverManager.getConnection(JdbcConfig.getDbUrl(), JdbcConfig.getUser(), JdbcConfig.getPass());
+        conn = DriverManager.getConnection(jdbcConfig.getDbUrl(), jdbcConfig.getUser(), jdbcConfig.getPass());
 
         return conn;
     }
@@ -54,8 +56,8 @@ public abstract class AbstractJdbcConnection extends JdbcConfig {
      * @param sql sql
      * @return ResultSet
      */
-    public void getResultSet(String sql) throws SQLException, ClassNotFoundException {
-        conn = getConnection();
+    public void getResultSet(JdbcConfig jdbcConfig,String sql) throws SQLException, ClassNotFoundException {
+        conn = getConnection(jdbcConfig);
         stmt = conn.createStatement();
         rs = stmt.executeQuery(sql);
     }

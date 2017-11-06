@@ -26,13 +26,13 @@ public abstract class AbstractTemplate {
      * @return {Template}
      * @throws IOException
      */
-    public Template getTemplate(String fileName) throws IOException {
+    public Template getTemplate(String fileName,String dirPath) throws IOException {
         Configuration cfg;
         //step1 创建一个Configuration实例
         cfg = new Configuration();
 
         //step2 设置配置文件中的template路径
-        File templateFile = FileUtils.getFile(TemplateConfig.getDirPath());
+        File templateFile = FileUtils.getFile(dirPath);
         if (!templateFile.exists()) {
             throw new NullPointerException("模板文件夹路径无效");
         }

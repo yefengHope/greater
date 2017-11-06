@@ -1,15 +1,25 @@
 package com.hf.engine.buildCode;
 
 
-import com.hf.engine.buildCode.build.TemplateConfig;
+import com.alibaba.fastjson.JSONObject;
 import com.hf.engine.buildCode.config.CodeFactoryConfig;
+import com.hf.engine.buildCode.config.IFileConfig;
+import com.hf.engine.buildCode.config.ITemplateConfig;
+import com.hf.engine.buildCode.config.impl.PropertiesConfig;
+import com.hf.engine.buildCode.config.impl.TemplateConfigHelper;
 import com.hf.engine.buildCode.init.AbstractInit;
 import com.hf.engine.buildCode.init.InitCommon;
+import com.hf.engine.buildCode.jdbc.JdbcConfig;
+import com.hf.engine.buildCode.jdbc.JdbcResult;
+import com.hf.engine.buildCode.jdbc.JdbcResultConvert;
+import com.hf.engine.buildCode.jdbc.JdbcResultImpl;
+import com.hf.engine.buildCode.model.FieldModel;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 创建
@@ -29,7 +39,7 @@ public class MainCreate {
         // System.out.println(classLoadPath);
 
 
-        CodeFactoryConfig.configProp("codeFactoryDjConfig");
+        CodeFactoryConfig.configProp("codeFactoryConfig");
         createFile();
         // System.out.println(System.getProperty("user.dir"));
         // try {
@@ -43,12 +53,32 @@ public class MainCreate {
 
     public static void createFile() {
 
-        AbstractInit init;
-        List<String> moduleConfigList = TemplateConfig.getTemplateModule();
-        for (String moduleName : moduleConfigList) {
-            init = new InitCommon(moduleName);
-            init.init();
+        // 获取代码生成器配置文件的map
+        IFileConfig config = new PropertiesConfig();
+        JSONObject configMap = config.getConfig("codeFactoryConfig");
+        // 获取配置模块
+        ITemplateConfig templateConfig = new TemplateConfigHelper();
+        // 获取配置模块
+        List<String> moduleNames = templateConfig.getTemplateModule(configMap,"template.module.match");
+        // 设置数据库配置
+        JdbcConfig jdbcConfig = new JdbcConfig(configMap);
+        // 获取数据库字段
+        JdbcResult jdbcResult = new JdbcResultImpl();
+        // "select * from information_schema.columns where table_name='" + jdbcConfig.getTableName() + "' "
+        List<Map<String, Object>> tableStructure = jdbcResult.getTableStructureList(jdbcConfig);
+        // 获取字段转换结果
+        List<FieldModel> fieldModels = JdbcResultConvert.formatColumn(tableStructure);
+
+        // 生成文件
+        AbstractInit init = new InitCommon();
+        for (String moduleName : moduleNames) {
+            JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
+            // ftl模板名
+            String matchStr = templateConfig.getTemplateModuleMatcherFtl(configMap,moduleName);
+            init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
         }
+
+
     }
 
     /**

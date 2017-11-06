@@ -1,5 +1,7 @@
 package com.hf.engine.buildCode.jdbc;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
@@ -19,9 +21,9 @@ public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult
     private static final long serialVersionUID = -2924831482896464794L;
 
     @Override
-    public List<Map<String, Object>> getList(String sql) {
+    public List<Map<String, Object>> getList(JdbcConfig jdbcConfig,String sql) {
         try {
-            getResultSet(sql);
+            getResultSet(jdbcConfig,sql);
             return parseResultSet();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -39,10 +41,10 @@ public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult
     }
 
     @Override
-    public List<Map<String, Object>> getTableStructureList() {
+    public List<Map<String, Object>> getTableStructureList(JdbcConfig jdbcConfig) {
         try {
-            String sql = "select * from information_schema.columns where table_name='" + JdbcConfig.getTableName() + "' ";
-            getResultSet(sql);
+            String sql = "select * from information_schema.columns where table_name='" + jdbcConfig.getTableName() + "' ";
+            getResultSet(jdbcConfig,sql);
             return parseResultSet();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -56,5 +58,4 @@ public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult
         }
         return null;
     }
-
 }

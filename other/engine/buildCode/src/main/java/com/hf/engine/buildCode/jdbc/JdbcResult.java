@@ -1,5 +1,7 @@
 package com.hf.engine.buildCode.jdbc;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +21,7 @@ public interface JdbcResult {
      * @param sql
      * @return
      */
-    List<Map<String, Object>> getList(String sql);
+    List<Map<String, Object>> getList(JdbcConfig jdbcConfig,String sql);
 
     /**
      * <p>获取数据表结构
@@ -43,6 +45,7 @@ public interface JdbcResult {
      * <p>     "TABLE_SCHEMA":"chihuo"
      * <p>}
      */
-    List<Map<String, Object>> getTableStructureList();
+    List<Map<String, Object>> getTableStructureList(JdbcConfig jdbcConfig);
+
 
 }
