@@ -72,7 +72,7 @@ public class MainCreate {
 
         // 生成代码片段
         MapperCodePart mapperCodePart = new MapperCodePart();
-        String resultMapCodePart = mapperCodePart.buildCodePart(fieldModels,null,null);
+        String resultMapCodePart = mapperCodePart.resultMap(fieldModels,null,null);
         System.out.println(resultMapCodePart);
 //        // 生成文件
 //        AbstractInit init = new InitCommon();

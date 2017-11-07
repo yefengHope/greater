@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class MapperCodePart {
 
-    public String buildCodePart(List<FieldModel> fieldModels,String resultMapId,String resultMapType) {
+    public String resultMap(List<FieldModel> fieldModels,String resultMapId,String resultMapType) {
         StringBuilder sb = new StringBuilder();
         sb.append("<resultMap");
         sb.append(" id=\"");
