@@ -2,6 +2,7 @@ package com.hf.engine.buildCode;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.hf.engine.buildCode.codePart.MapperCodePart;
 import com.hf.engine.buildCode.config.CodeFactoryConfig;
 import com.hf.engine.buildCode.config.IFileConfig;
 import com.hf.engine.buildCode.config.ITemplateConfig;
@@ -69,19 +70,23 @@ public class MainCreate {
         // 获取字段转换结果
         List<FieldModel> fieldModels = JdbcResultConvert.formatColumn(tableStructure);
 
-        // 生成文件
-        AbstractInit init = new InitCommon();
-        for (String moduleName : moduleNames) {
-            JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
-            // ftl模板名
-            String matchStr = templateConfig.getTemplateModuleMatcherFtl(configMap,moduleName);
-            try {
-                init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
+        // 生成代码片段
+        MapperCodePart mapperCodePart = new MapperCodePart();
+        String resultMapCodePart = mapperCodePart.buildCodePart(fieldModels,null,null);
+        System.out.println(resultMapCodePart);
+//        // 生成文件
+//        AbstractInit init = new InitCommon();
+//        for (String moduleName : moduleNames) {
+//            JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
+//            // ftl模板名
+//            String matchStr = templateConfig.getTemplateModuleMatcherFtl(configMap,moduleName);
+//            try {
+//                init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
 
 
     }
