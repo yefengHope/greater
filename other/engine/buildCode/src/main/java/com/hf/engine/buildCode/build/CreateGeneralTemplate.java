@@ -54,7 +54,7 @@ public class CreateGeneralTemplate extends AbstractTemplate {
         }
         Template template = null;
         try {
-            template = getTemplate(fileName,map.get(""));
+            template = getTemplate(fileName, String.valueOf(map.get("templatePackagePath")));
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class TemplateConfigHelper implements ITemplateConfig {
     public List<String> getTemplateModule(JSONObject config,String templateModuleMatchKey) {
         List<String> templateModule = new ArrayList<>();
         Set<String> keyNames = config.keySet();
-        Pattern pattern = Pattern.compile(templateModuleMatchKey);
+        Pattern pattern = Pattern.compile(config.getString(templateModuleMatchKey));
         for (String key : keyNames) {
             if (pattern.matcher(key).find()) {
                 templateModule.add(config.getString(key));

@@ -23,6 +23,7 @@ public abstract class AbstractTemplate {
     /**
      * 获取模板, 文件夹路径在配置文件中设置
      * @param fileName  ftl文件名
+     * @param dirPath   模板文件夹路径
      * @return {Template}
      * @throws IOException
      */

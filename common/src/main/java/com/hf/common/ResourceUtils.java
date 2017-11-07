@@ -53,10 +53,10 @@ public class ResourceUtils {
         for (String key : resourceBundle.keySet()) {
             String value = resourceBundle.getString(key);
             Matcher matcher = pattern.matcher(value);
-            System.out.println(value);
-            if ("${service.fileName}".equals(value)) {
-                System.out.println();
-            }
+//            System.out.println(value);
+//            if ("${service.fileName}".equals(value)) {
+//                System.out.println();
+//            }
             String g;
             while (matcher.find()) {
                 g = matcher.group();

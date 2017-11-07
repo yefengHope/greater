@@ -39,7 +39,7 @@ public class MainCreate {
         // System.out.println(classLoadPath);
 
 
-        CodeFactoryConfig.configProp("codeFactoryConfig");
+//        CodeFactoryConfig.configProp("codeFactoryConfig");
         createFile();
         // System.out.println(System.getProperty("user.dir"));
         // try {
@@ -55,7 +55,7 @@ public class MainCreate {
 
         // 获取代码生成器配置文件的map
         IFileConfig config = new PropertiesConfig();
-        JSONObject configMap = config.getConfig("codeFactoryConfig");
+        JSONObject configMap = config.getConfig("codeFactoryDjConfig");
         // 获取配置模块
         ITemplateConfig templateConfig = new TemplateConfigHelper();
         // 获取配置模块
@@ -75,7 +75,12 @@ public class MainCreate {
             JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
             // ftl模板名
             String matchStr = templateConfig.getTemplateModuleMatcherFtl(configMap,moduleName);
-            init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
+            try {
+                init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
 
 
