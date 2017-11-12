@@ -12,6 +12,7 @@
         <module>admin/adminWeb</module>
         <module>payGetWay</module>
         <module>other/engine/buildCode</module>
+        <module>demo/spider/webMagic</module>
     </modules>
     <name>greater</name>
     <properties>
@@ -112,12 +113,12 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>${apache.httpclient.version }</version>
+                <version>${apache.httpclient.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>${fastjson.version }</version>
+                <version>${fastjson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
