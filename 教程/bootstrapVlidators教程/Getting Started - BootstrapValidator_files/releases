@@ -1,0 +1,54 @@
+/**/jQuery111103716656554316806_1510207493533({
+  "meta": {
+    "Content-Type": "application/javascript; charset=utf-8",
+    "X-RateLimit-Limit": "60",
+    "X-RateLimit-Remaining": "59",
+    "X-RateLimit-Reset": "1510211102",
+    "Cache-Control": "public, max-age=60, s-maxage=60",
+    "Vary": "Accept",
+    "ETag": "\"9ea26fdaa3c87325d0f5f3b6752a2385\"",
+    "X-GitHub-Media-Type": "github.v3; format=json",
+    "status": 200
+  },
+  "data": [
+    {
+      "url": "https://api.github.com/repos/nghuuphuoc/bootstrapvalidator/releases/1016763",
+      "assets_url": "https://api.github.com/repos/nghuuphuoc/bootstrapvalidator/releases/1016763/assets",
+      "upload_url": "https://uploads.github.com/repos/nghuuphuoc/bootstrapvalidator/releases/1016763/assets{?name,label}",
+      "html_url": "https://github.com/nghuuphuoc/bootstrapvalidator/releases/tag/v0.5.3",
+      "id": 1016763,
+      "tag_name": "v0.5.3",
+      "target_commitish": "8d8eb4f554bec2687fe6f0cb9349d577a1e67872",
+      "name": "v0.5.3",
+      "draft": false,
+      "author": {
+        "login": "nghuuphuoc",
+        "id": 4226036,
+        "avatar_url": "https://avatars3.githubusercontent.com/u/4226036?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/nghuuphuoc",
+        "html_url": "https://github.com/nghuuphuoc",
+        "followers_url": "https://api.github.com/users/nghuuphuoc/followers",
+        "following_url": "https://api.github.com/users/nghuuphuoc/following{/other_user}",
+        "gists_url": "https://api.github.com/users/nghuuphuoc/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/nghuuphuoc/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/nghuuphuoc/subscriptions",
+        "organizations_url": "https://api.github.com/users/nghuuphuoc/orgs",
+        "repos_url": "https://api.github.com/users/nghuuphuoc/repos",
+        "events_url": "https://api.github.com/users/nghuuphuoc/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/nghuuphuoc/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "prerelease": false,
+      "created_at": "2014-11-05T14:40:06Z",
+      "published_at": "2015-03-05T12:16:26Z",
+      "assets": [
+
+      ],
+      "tarball_url": "https://api.github.com/repos/nghuuphuoc/bootstrapvalidator/tarball/v0.5.3",
+      "zipball_url": "https://api.github.com/repos/nghuuphuoc/bootstrapvalidator/zipball/v0.5.3",
+      "body": ""
+    }
+  ]
+})
