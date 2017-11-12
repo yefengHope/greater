@@ -27,9 +27,7 @@ public class ${config.className} implements Serializable {
     <#--如果data.fields 存在,则循环写入变量-->
     <#if data.fieldModels??>
         <#list data.fieldModels as fildModels>
-        <#if fildModels.lowerCamelCaseName?matches("^((create)|(update))[A-Z][A-Za-z0-9]*")
-            || fildModels.lowerCamelCaseName == "id">
-        <#else>
+
         /**
         * ${fildModels.comment}
         */
@@ -39,16 +37,12 @@ public class ${config.className} implements Serializable {
         </#if>
         @Column(name = "${fildModels.dbColumName}")
         private ${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName} ;
-        </#if>
         </#list>
     </#if>
 
     <#--如果data.fields 存在,则循环写入GET/SET方法-->
     <#if data.fieldModels??>
         <#list data.fieldModels as fildModels>
-            <#if fildModels.lowerCamelCaseName?matches("^((create)|(update))[A-Z][A-Za-z0-9]*")
-            || fildModels.lowerCamelCaseName == "id">
-            <#else>
         /**
         * 获取${fildModels.comment}
         */
@@ -62,7 +56,6 @@ public class ${config.className} implements Serializable {
         public void set${fildModels.upperCamelCaseName} (${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName}) {
             this.${fildModels.lowerCamelCaseName} = ${fildModels.lowerCamelCaseName};
         }
-            </#if>
         </#list>
     </#if>
 }

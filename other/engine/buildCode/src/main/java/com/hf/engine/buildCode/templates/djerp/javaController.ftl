@@ -48,7 +48,7 @@ import cn.hlhdj.duoji.erp.commons.util.JsonResultUtils;
 */
 @Controller
 @RequestMapping(value = "${configRequestMapping?trim}")
-public class ${config.className} extends BaseController {
+public class ${config.className} {
 
     private static Logger logger;
 
@@ -82,7 +82,8 @@ public class ${config.className} extends BaseController {
     @RequestMapping(value = "listJson", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> listJson(Integer pageNumber , Integer pageSize, ${configImplEntity?trim} ${configImplEntity?uncap_first?trim}) {
-    PageInfo<${configImplEntity?trim}> pageInfo = ${configImplService?uncap_first?trim}.findAllPageList(pageNumber,pageSize,${configImplEntity?uncap_first?trim});
+    PageInfo<${configImplEntity?trim}> pageInfo = new PageInfo<>();
+        pageInfo = ${configImplService?uncap_first?trim}.findAllPageList(pageNumber,pageSize,${configImplEntity?uncap_first?trim});
         return JsonResultUtils.returnBootTable(true,"查询成功",pageInfo);
     }
 
@@ -93,7 +94,7 @@ public class ${config.className} extends BaseController {
     */
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String toAdd(Model model) {
-        ${configImplEntity?trim} ${configImplEntity?uncap_first?trim} = (${configImplEntity?trim}) createObjFromClass(${configImplEntity?trim}.class);
+        ${configImplEntity?trim} ${configImplEntity?uncap_first?trim} = new ${configImplEntity?trim}();
         model.addAttribute("dataEntity", JSON.toJSONString(${configImplEntity?uncap_first?trim}, SerializerFeature.WriteMapNullValue));
         return "${configFtlPrefix?trim}/form";
     }
@@ -109,8 +110,7 @@ public class ${config.className} extends BaseController {
     public Map add(${configImplEntity?trim} ${configImplEntity?uncap_first?trim}) {
         if (${configImplEntity?uncap_first?trim} != null && null == ${configImplEntity?uncap_first?trim}.getId() ){
             try {
-                BaseEntity.setCreateAndUpdateUser(${configImplEntity?uncap_first?trim});
-                ${configImplService?uncap_first?trim}.save(${configImplEntity?uncap_first?trim});
+                // TODO
                 return JsonResultUtils.returnAjax(true,"保存成功",null,null);
             } catch (Exception e) {
                 logger.error("新增异常",e);
@@ -129,7 +129,7 @@ public class ${config.className} extends BaseController {
     */
     @RequestMapping(value = "update", method = RequestMethod.GET)
     public String toUpdate(Model model,${configImplEntity?trim} ${configImplEntity?uncap_first?trim}) {
-        ${configImplEntity?trim} ${configImplEntity?uncap_first?trim}One = ${configImplService?uncap_first?trim}.findOne(${configImplEntity?uncap_first?trim});
+        ${configImplEntity?trim} ${configImplEntity?uncap_first?trim}One = new ${configImplEntity?trim}();
         model.addAttribute("dataEntity", JSON.toJSONString(${configImplEntity?uncap_first?trim}One, SerializerFeature.WriteMapNullValue));
         return "${configFtlPrefix?trim}/form";
     }
@@ -139,8 +139,7 @@ public class ${config.className} extends BaseController {
     public Map update(${configImplEntity?trim} ${configImplEntity?uncap_first?trim}) {
         if (${configImplEntity?uncap_first?trim} != null && null != ${configImplEntity?uncap_first?trim}.getId()){
             try {
-                BaseEntity.setUpdateUser(${configImplEntity?uncap_first?trim});
-                ${configImplService?uncap_first?trim}.update(${configImplEntity?uncap_first?trim});
+                // TODO
                 return JsonResultUtils.returnAjax(true,"保存成功",null,null);
             } catch (Exception e) {
                 logger.error("修改基础数据异常",e);
