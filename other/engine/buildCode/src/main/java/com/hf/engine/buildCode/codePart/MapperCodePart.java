@@ -32,7 +32,7 @@ public class MapperCodePart {
             sb.append(" property=\"");
             sb.append(fieldModel.getLowerCamelCaseName());
             sb.append("\"");
-            sb.append("\\");
+            sb.append("/");
             sb.append(">");
             sb.append("\n");
         }

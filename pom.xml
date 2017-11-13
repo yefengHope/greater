@@ -13,6 +13,7 @@
         <module>payGetWay</module>
         <module>other/engine/buildCode</module>
         <module>demo/spider/webMagic</module>
+        <module>demo/spring</module>
     </modules>
     <name>greater</name>
     <properties>
