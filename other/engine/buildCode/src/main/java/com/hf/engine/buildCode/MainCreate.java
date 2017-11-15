@@ -56,7 +56,7 @@ public class MainCreate {
 
         // 获取代码生成器配置文件的map
         IFileConfig config = new PropertiesConfig();
-        JSONObject configMap = config.getConfig("codeFactoryConfig");
+        JSONObject configMap = config.getConfig("codeFactoryDjConfig1");
         // 获取配置模块
         ITemplateConfig templateConfig = new TemplateConfigHelper();
         // 获取配置模块
@@ -74,19 +74,19 @@ public class MainCreate {
         MapperCodePart mapperCodePart = new MapperCodePart();
         String resultMapCodePart = mapperCodePart.resultMap(fieldModels,null,null);
         System.out.println(resultMapCodePart);
-       // 生成文件
-       AbstractInit init = new InitCommon();
-       for (String moduleName : moduleNames) {
-           JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
-           // ftl模板名
-           String matchStr = templateConfig.getTemplateModuleMatcherFtl(configMap,moduleName);
-           try {
-               init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
-           } catch (Exception e) {
-               e.printStackTrace();
-           }
-
-       }
+//       // 生成文件
+//       AbstractInit init = new InitCommon();
+//       for (String moduleName : moduleNames) {
+//           JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
+//           // ftl模板名
+//           String matchStr = templateConfig.getTemplateModuleMatcherFtl(configMap,moduleName);
+//           try {
+//               init.defaultInit(moduleName,fieldModels,configModulAttr,configMap,matchStr);
+//           } catch (Exception e) {
+//               e.printStackTrace();
+//           }
+//
+//       }
 
 
     }
