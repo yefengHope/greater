@@ -34,6 +34,7 @@ public class ${config.className} implements Serializable {
         <#if fildModels.simpleDataTypeName == "Date">
         @JSONField(format="yyyy-MM-dd HH:mm:ss")
         @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
         </#if>
         @Column(name = "${fildModels.dbColumName}")
         private ${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName} ;

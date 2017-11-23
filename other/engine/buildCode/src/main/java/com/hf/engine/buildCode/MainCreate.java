@@ -2,6 +2,7 @@ package com.hf.engine.buildCode;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.hf.engine.buildCode.codePart.BootstrapTableCodePart;
 import com.hf.engine.buildCode.codePart.MapperCodePart;
 import com.hf.engine.buildCode.config.CodeFactoryConfig;
 import com.hf.engine.buildCode.config.IFileConfig;
@@ -56,7 +57,7 @@ public class MainCreate {
 
         // 获取代码生成器配置文件的map
         IFileConfig config = new PropertiesConfig();
-        JSONObject configMap = config.getConfig("codeFactoryDjConfig1");
+        JSONObject configMap = config.getConfig("codeFactoryDjConfig");
         // 获取配置模块
         ITemplateConfig templateConfig = new TemplateConfigHelper();
         // 获取配置模块
@@ -74,7 +75,12 @@ public class MainCreate {
         MapperCodePart mapperCodePart = new MapperCodePart();
         String resultMapCodePart = mapperCodePart.resultMap(fieldModels,null,null);
         System.out.println(resultMapCodePart);
-//       // 生成文件
+
+        BootstrapTableCodePart tableCodePart = new BootstrapTableCodePart();
+        String resultTableCodePart = tableCodePart.buildColumns(fieldModels);
+        System.out.println(resultTableCodePart);
+
+       // 生成文件
 //       AbstractInit init = new InitCommon();
 //       for (String moduleName : moduleNames) {
 //           JSONObject configModulAttr = templateConfig.getConfigType(configMap,moduleName);
