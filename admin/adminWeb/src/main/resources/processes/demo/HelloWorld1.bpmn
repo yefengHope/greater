@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
-	xmlns:activiti="http://activiti.org/bpmn" 
-	xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
-	xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" 
-	xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" 
-	xmlns:tns="http://www.activiti.org/test" 
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	expressionLanguage="http://www.w3.org/1999/XPath" 
-	id="m1508251644285" name="" 
-	targetNamespace="http://www.activiti.org/test" 
-	typeLanguage="http://www.w3.org/2001/XMLSchema">
-
-  
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="Yaoqiang BPMN Editor" exporterVersion="5.3" expressionLanguage="http://www.w3.org/1999/XPath" id="m1508251644285" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
   <process id="helloWorld1" isClosed="false" isExecutable="true" name="helloWorld1" processType="Public">
-    <startEvent id="StartEvent_2" name="StartEvent"/>
-    <endEvent id="EndEvent_3" name="EndEvent"/>
+    <extensionElements>
+      <yaoqiang:description/>
+      <yaoqiang:pageFormat height="841.8897637795276" imageableHeight="831.8897637795276" imageableWidth="588.1102362204724" imageableX="5.0" imageableY="5.0" orientation="0" width="598.1102362204724"/>
+      <yaoqiang:page background="#FFFFFF" horizontalCount="1" verticalCount="1"/>
+    </extensionElements>
+    <startEvent id="StartEvent_2" isInterrupting="true" name="StartEvent" parallelMultiple="false">
+      <outgoing>_4</outgoing>
+      <outputSet/>
+    </startEvent>
+    <endEvent id="EndEvent_3" name="EndEvent">
+      <incoming>_4</incoming>
+      <inputSet/>
+    </endEvent>
     <sequenceFlow id="_4" sourceRef="StartEvent_2" targetRef="EndEvent_3"/>
   </process>
-  <bpmndi:BPMNDiagram documentation="background=#3C3F41;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
-    <bpmndi:BPMNPlane bpmnElement="helloWorld">
-      <bpmndi:BPMNShape bpmnElement="StartEvent_2" id="Shape-StartEvent_2">
+  <bpmndi:BPMNDiagram id="Yaoqiang_Diagram-helloWorld1" name="New Diagram" resolution="96.0">
+    <bpmndi:BPMNPlane bpmnElement="helloWorld1">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_2" id="Yaoqiang-StartEvent_2">
         <omgdc:Bounds height="32.0" width="32.0" x="55.0" y="85.0"/>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+          <omgdc:Bounds height="19.84" width="56.0" x="43.0" y="125.08"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="EndEvent_3" id="Shape-EndEvent_3">
+      <bpmndi:BPMNShape bpmnElement="EndEvent_3" id="Yaoqiang-EndEvent_3">
         <omgdc:Bounds height="32.0" width="32.0" x="310.0" y="90.0"/>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+          <omgdc:Bounds height="19.84" width="51.0" x="300.5" y="130.08"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="_4" id="BPMNEdge__4" sourceElement="_2" targetElement="_3">
+      <bpmndi:BPMNEdge bpmnElement="_4" id="Yaoqiang-_4">
         <omgdi:waypoint x="87.0" y="101.0"/>
         <omgdi:waypoint x="310.0" y="106.0"/>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+          <omgdc:Bounds height="19.84" width="6.0" x="195.5" y="93.58"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>

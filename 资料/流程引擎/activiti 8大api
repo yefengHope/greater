@@ -1,0 +1,17 @@
+配置主要由两大部分：
+一个是ProcessEngineConfiguration，这个是activiti基础参数的配置，如：数据源什么的。
+还有一个是activiti的八个service接口，这是使用activiti的关键，每个接口都有不同的职责。
+而这些接口需要通过ProcessEngine来获取，activiti为了和spring整合提供了ProcessEngineFactroyBean，可通过它来获取ProcessEngin。
+
+RepositoryService:提供与流程定义相关的方法，可查询模型(model)、流程定义(process definition)、流程部署(deployment)。
+RuntimeService:提供流程执行时相关的方法，可查询流程实例(process insatnce)、执行实例(execution)，可开启流程实例。
+TaskService:提供任务相关的方法，可进行查询、指派、完成任务等操作。
+HistoriyService:提供历史记录相关的方法，可查询历史任务(historic task instance)，历史流程实例(historic process instance)等。
+FormService:提供表单相关的方法，一个用户任务可对应一个formkey，可通过formkey查找表单，提供表单的获取等方法。
+IdentityService:提供用户权限认证相关的方法，可查询用户、组等信息，可设置当前用户。
+ManagementService:与引擎配置相关，可获取引擎数据库信息，并且可以执行自定义的命令(command)。
+DynamicBpmnService:提供动态获取，以及动态修改流程定义的方法。
+
+配置好了这些，activiti的基本配置就完成了，现在就可以在程序中通过注入来得到各种service的实例。
+
+一个流程控制中心程序，基本上就是这几个service配合使用来实现的，所以搭好基础环境后，就可以开始编写自己的流程控制中心了。

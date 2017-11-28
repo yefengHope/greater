@@ -1,0 +1,31 @@
+部署流程定义
+
+      方式一：加载单个的流程定义文件
+      方式二：加载zip文件
+
+ 执行部署流程定义，程序会操作以下三张表
+      act_re_deployment(部署表)
+      act_re_procdef(流程定义表)
+      act_ge_bytearray(二进制表)
+
+
+//------------------------- 代码 start-----------------------------
+
+        //创建部署构建器对象
+        DeploymentBuilder deploymentBuilder = processEngine.getRepositoryService().createDeployment();
+
+        // 方式一：加载单个的流程定义文件
+//       deploymentBuilder.addClasspathResource("qjlc.bpmn");
+//       deploymentBuilder.addClasspathResource("qjlc.png");
+//       Deployment deployment = deploymentBuilder.deploy();
+//
+//       System.out.println(deployment.getId());
+
+         //将zip文件转换为输入流
+        ZipInputStream zipInputStream = new ZipInputStream(this.getClass().getClassLoader().getResourceAsStream("process.zip"));
+        // 方式二：加载zip文件
+        //ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(new File("d:\\process.zip")));
+        deploymentBuilder.addZipInputStream(zipInputStream );
+        Deployment deployment = deploymentBuilder.deploy();
+
+        System.out.println(deployment.getId());
