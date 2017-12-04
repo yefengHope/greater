@@ -68,8 +68,10 @@ public class MultiHttpSecurityConfig {
          */
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-        /*Spring Boot不允许加载iframe问题解决*/
-            http.headers().frameOptions().disable();
+            /*Spring Boot不允许加载iframe问题解决*/
+//            http.headers().frameOptions().disable(); // 所有网页都可以被iframe
+            http.headers().frameOptions().sameOrigin()
+                    .httpStrictTransportSecurity().disable(); // 允许同源网页可以被iframe
             // authorizeRequests()定义哪些URL需要被保护、哪些不需要被保护
             // /和/home不需要任何认证就可以访问，其他的路径都必须通过身份验证
             // defaultSuccessUrl 登录成功页
