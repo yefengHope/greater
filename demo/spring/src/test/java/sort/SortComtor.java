@@ -1,4 +1,6 @@
-package sort.vo;
+package sort;
+
+import sort.vo.SortVo;
 
 import java.util.Comparator;
 
