@@ -3,7 +3,7 @@
     <parent>
         <artifactId>greater</artifactId>
         <groupId>com.hf</groupId>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
         <version>1.0.0-SNAPSHOT</version>
         <!--<version>${pro.greater.version}</version>-->
     </parent>

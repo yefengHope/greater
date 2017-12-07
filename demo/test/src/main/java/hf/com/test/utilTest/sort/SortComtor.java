@@ -1,6 +1,7 @@
-package sort;
+package hf.com.test.utilTest.sort;
 
-import sort.vo.SortVo;
+
+import hf.com.test.utilTest.sort.vo.SortVo;
 
 import java.util.Comparator;
 

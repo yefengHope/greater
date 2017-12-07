@@ -1,4 +1,4 @@
-package sort.vo;
+package hf.com.test.utilTest.sort.vo;
 
 import java.util.Comparator;
 
@@ -17,7 +17,7 @@ public class SortVo implements Cloneable {
     private Integer num;
 
     @Override
-    protected SortVo clone() throws CloneNotSupportedException {
+    public SortVo clone() throws CloneNotSupportedException {
         return (SortVo) super.clone();
     }
 

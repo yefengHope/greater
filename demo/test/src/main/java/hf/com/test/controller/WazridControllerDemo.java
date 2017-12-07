@@ -1,4 +1,4 @@
-package com.hf.demoSpring;
+package hf.com.test.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
