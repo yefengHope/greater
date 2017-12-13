@@ -12,8 +12,11 @@ public @interface Note {
      */
     String name();
 
+    boolean isOverlook() default false;
+
     /**
      * 默认参数
+     * {@code BeanCompare}类校验时，是否忽略
      * @return
      */
     String defaultParam() default "";
