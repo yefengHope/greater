@@ -20,6 +20,7 @@ public class ArrayAlg {
         return t;
     }
     public static <T> void ArrayAlg3(List list) {
+        // 只能用于数组
         System.out.println("list.getClass().getComponentType() :" + list.getClass().getComponentType());
     }
 
@@ -29,7 +30,9 @@ public class ArrayAlg {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
+            ArrayAlg.ArrayAlg4(list);
             ArrayAlg.ArrayAlg4("1","2","4");
+            ArrayAlg.ArrayAlg4(new Integer[] {1,2,3,4});
 
         Map map = new HashMap();
         try {
